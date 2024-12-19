@@ -1,0 +1,26 @@
+
+EXO1
+A quel classe appartiennent les addresse suivantes
+143.25.67.89
+192.23.67.123
+221.45.67.123
+123.56.78.23
+126.9.76.23
+EXO2
+Dans cet exercices vous devez determinez combien de bits sont necessaires pour creer le nombre de sous rx demandes 
+84 sr
+147 sr
+7 sr
+1sr
+15sr
+EXO3
+A partir d'un id de reseau et d'in nombre voulu de sous reseau
+calculer le masque de sous reseau et le nombre d'hotes par sousrx
+1) 148.25..0.0 (37)sr
+2) 198.63.24.0(2)sr
+3) 110.0.0.0 (1000) sr
+4) 175.23.0.0 (550)sr
+5) 209.206.202.0 (60)sr
+
+
+ 

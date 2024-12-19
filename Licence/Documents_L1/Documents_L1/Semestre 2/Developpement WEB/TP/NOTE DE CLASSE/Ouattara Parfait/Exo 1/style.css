@@ -1,0 +1,35 @@
+.nom{
+    margin-left: 100px;
+}
+
+.prenom{
+    margin-left: 82px;
+}
+.Date{
+    margin-left: 105px;
+}
+
+.choix{
+    margin-left: 100px;
+}
+
+.blocdiv{
+    margin-left: 20px;
+}
+.blocinfo{
+    margin-top: 10px
+}
+.tableau{
+    margin-top:50px
+}
+.tableau2{
+    margin-top:-160px;
+    margin-left:200px;
+    margin-bottom: 150px;
+}
+table{
+    margin-top:50px;
+    margin-left:50px;
+    margin-bottom: 50px;
+    margin-right:50px;
+}

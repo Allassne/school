@@ -1,0 +1,15 @@
+switchport port-security
+switchport port-security maximum 1
+switchport port-security mac-address sticky
+switchport port-security violation restrict
+
+
+				PARTIR_2
+port-security interface fastEthernet 0/1 [2]
+show port-security address
+
+f.show port-security interface fastEthernet 0/2
+
+
+			(C:\>ipconfig /all)
+parce que la premiere @-mac qui a été apprise par l'interface F0/2 est @ du PC2

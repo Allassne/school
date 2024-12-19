@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Positionnement flottant</title>
+        <style type="text/css">
+                div{
+		border: 1px solid rgba(0,0,0,.3);
+		text-align: center;
+        color:#fff;
+       }
+/*Les 3  éléments flottent à gauche  donc on leurs affectent la valeur float:left*/
+        .box{
+            float:left;
+            background: #3498db;
+            margin: 5px;
+            height: 40px;
+
+        }
+/*Pour empêcher le débordement des flottants de leur conteneur , on doit lui attribuer
+le contexte de formatage (voir plus sur Contexte de formatage de blocs) : donc il suffit
+ de lui affecter par exemple la propriété overflow:hidden.*/	  
+        .block2{
+                float: left;
+                background: #3498db;
+                height: 40px;
+                    
+            }
+        .block3{
+                background: #d35400;
+                height:60px;
+            }	
+        
+        .block2{
+                float: left;
+                background: #3498db;
+                height: 40px;
+            }
+        .block3{
+                float: right;
+                background: #d35400;
+                height: 40px;
+            }
+        .block4{
+                clear: both;
+                background: #1abc9c;
+                height: 40px;
+            }	 
+       /*
+        .block2{
+                float:right;
+                background: #3498db;
+            }
+        .block3{
+                clear: right;
+                float: right;
+                background: #d35400;
+            }
+        .block4{
+                clear: right;
+                background: #1abc9c;
+            }	 
+        
+        .block2{
+                float: right;
+                background: #3498db;
+                    
+            }
+        .block3{
+                clear: right;
+                float: right;
+                background: #d35400;
+                    
+            }
+        .block4{
+                clear: right;
+                float: right;
+                background: #1abc9c;
+                
+                
+            }
+            */
+        </style>
+    </head>
+    <body>
+        <div class="conteneur">	
+            <div class="box">block2</div>
+            <div class="box">block3</div>
+            <div class="box">block4</div>
+       </div>
+  
+    </body>
+</html>
+
+<!--
+     Objectif :
+Appliquer  les propriétés float et clear pour définir un positionnement flottant.
+
+Travail à faire
+Observez les figures et appliquez les propriétés  et les valeurs appropriées.
+
+On considère le document html suivant :
+
+-->

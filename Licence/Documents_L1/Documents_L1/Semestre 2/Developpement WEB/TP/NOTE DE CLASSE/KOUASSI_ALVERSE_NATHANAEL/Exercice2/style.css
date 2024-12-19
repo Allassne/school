@@ -1,0 +1,10 @@
+img{
+    position:relative;
+    left:50px;
+}
+table{
+    background-color: rgb(238, 218, 195);
+}
+table,tr,td{
+    border-collapse: collapse;
+}

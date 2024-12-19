@@ -1,0 +1,30 @@
+td,tr{
+    border:1px solid black;
+}
+.multi_3{
+    background-color: yellow;
+    color:black;
+}
+.multi_5{
+    background-color: red;
+    color:black;
+}
+.souligne{
+    text-decoration:underline;
+}
+.premier{
+    background-color: blue;
+    color:black;
+}
+.T{
+    background-color: blue;
+}
+.T1{
+    background-color: red
+}
+.T2{
+    background-color: yellow;
+}
+tr~td{
+    text-align: center;
+}

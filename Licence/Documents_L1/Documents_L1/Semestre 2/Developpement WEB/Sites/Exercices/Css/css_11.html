@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Checkbox</title>
+        <style type="text/css">
+                caption{
+	font-size: 1.5em;
+	text-transform: capitalize;
+}
+table{
+	border:none;
+}
+
+th,td{
+	padding: 10px;
+	text-align: center;
+}
+/* cibler la deuxieme th de la première tr */
+tr:first-child th:nth-child(2){
+	font-size: 2em;
+	color: blue;
+}
+/* cibler les tr en position paire dans la balise tbody */
+tbody tr:nth-child(2n){
+	background-color: #FCB941;
+}
+tbody tr:nth-child(2n+1){
+	background-color: #F1654C;
+}
+/* cibler la première cellule de chaque ligne en position paire  */
+tr:nth-child(odd)>td:first-child{
+	background-color: #7E3661;
+	color:#fff;
+
+}
+tr:nth-child(even)>td:first-child{
+	background-color: #888888;
+	color:#fff;
+
+}
+tr:nth-child(odd)>td:last-child{
+	background-color: #8870FF;
+	color:#fff;
+
+}
+/* cibler la dernière th qui possède un attribut "rowspan" */
+th:last-child[rowspan]{
+	border-right:none;
+	border-top:none;
+}
+
+        </style>
+    </head>
+    <body>
+        <table border="1" cellspacing="0" style="text-align:center;" width="500px">
+            <caption>Planning des taches par équipe</caption>
+            <thead>
+                <tr>
+                    <th rowspan="2">Equipes</th>
+                    <th colspan="10"> Janvier </th>
+                    <th rowspan="2"></th>
+                </tr>
+                <tr>
+                    <th colspan="2">Lundi</th>
+                    <th colspan="2">Mardi</th>
+                    <th colspan="2">Mercredi</th>
+                    <th colspan="2">Jeudi</th>
+                    <th colspan="2">Vendredi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Equipe1</td>
+                    <td colspan="6">Tach1</td>
+                    <td colspan="4">Tache2</td>
+                    <td rowspan="2">Semaine 1</td>
+                </tr>
+                <tr>
+                    <td>Equipe2</td> 
+                    <td colspan="5">Tache1</td>
+                    <td colspan="5">Tache2</td>
+                </tr>
+                <tr>
+                    <td>Equipe1</td>
+                    <td colspan="2">Tach3</td>
+                    <td colspan="6">Tache4</td>
+                    <td colspan="2">Tache5</td>
+                    <td rowspan="2">Semaine 2</td>
+                </tr>
+                <tr>
+                    <td>Equipe2</td>
+                    <td colspan="4">Tache3</td>
+                    <td colspan="6">Tache4</td>
+                </tr>
+                <tr>
+                    <td>Equipe1</td>
+                    <td colspan="5">Tache5</td>
+                    <td colspan="5">Tache6</td>
+                    <td rowspan="2">Semaine 3</td>
+                </tr>
+                <tr>
+                    <td>Equipe2</td>
+                    <td colspan="2">Tache5</td>
+                    <td colspan="8">Tache6</td>
+                </tr>
+                <tr>
+                    <td>Equipe1</td>
+                    <td colspan="6">Tache7</td>
+                    <td colspan="4">Tache8</td>
+                    <td rowspan="2">Semaine 4</td>
+                </tr>
+                <tr>
+                    <td>Equipe2</td>
+                    <td colspan="5">Tache7</td>
+                    <td colspan="5">Tache8</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
+
+<!--
+   Objectif : 
+L'objectif de cet exercice est de cibler des éléments HTML dans un certain état en se basant sur les pseudo classes CSS : first-child, nth-child(), last-child, link, visited, hover ...
+
+Exercice 1:
+Soit un code html contenant deux liens :
+
+<a href="http://www.exelib.net/exercices/developpement-web/html/">Exercices HTML</a>
+<a href="http://www.exelib.net/exercices/programmation/langage-c/">Exercices C</a>
+Utiliser les pseudo classes ":hover" ":visited" ":active" dans l'ordre convenable afin de définir l'apparence des liens comme suit :
+
+Les liens survolés: non soulignés avec un background  "#7E3661" et une couleur de texte blanche.
+Les liens visités : avec une couleur de texte égale à "#FCB941"
+Les liens (état cliqué) : avec une taille de 1.5em.
+Exercice 2:
+On considère le tableau html suivant :
+
+tableau-fusion-cellules
+Tableau avec fusion de cellules
+Vous pouvez consulter son code html disponible en correction: Fusion de cellules
+
+Travail à faire :
+Changer la taille du titre à "1.5em" en affichant la première lettre de chaque mot en capitale.
+Enlever la bordure pour le tableau.
+Ajouter une marge interne de 10px et un alignement centré pour tous les cellules "th et td".
+Cibler  la deuxième balise "th" de la première "tr" qui contient le mois du planning pour lui changer la taille en "2em" et la couleur en bleu.
+Mettre en  background "#FCB941"  tous lignes "tr" du tbody qui viennent en positions paires et en background "#F1654C" les lignes qui viennent en positions impaires (Utiliser le pseudo classe "nth-child").
+Donner à la première cellule de chaque ligne en position impaire ,un background "#7E3661" et une couleur "#fff".(Utiliser les pseudo classes nth-child et first-child)
+Donner à la première cellule de chaque ligne en position paire ,un background "#888888" et une couleur "#fff".(Utiliser les pseudo classes nth-child et first-child)
+Donner à la dernière cellule de chaque ligne en position impaire ,un background "#8870FF" et une couleur "#fff".(Utiliser les pseudo classes nth-child et last-child)
+Enlever la bordure droite et la bordure du haut, de la dernière cellule "th" qui possède un attribut "rowspan" (utiliser le pseudo classe "last-child' et un sélecteur d'attribut pour "rowspan".
+
+
+Solution
+L'ordre par priorité croissante des états d'un lien est : 
+
+link -> visited -> hover ->active
+Donc le code css doit respecter cet ordre comme suit  :
+
+a:visited{
+	color: #FCB941;
+}
+a:hover{
+	text-decoration: none;
+	color: white;
+	background: #8870FF;
+}
+a:active{
+	font-size: 1.5em;
+}
+
+Dans l'exercice 2 on va utiliser les pseudo classes nth-child ,first-child,last-child sur les balises "tr td et th".
+-->

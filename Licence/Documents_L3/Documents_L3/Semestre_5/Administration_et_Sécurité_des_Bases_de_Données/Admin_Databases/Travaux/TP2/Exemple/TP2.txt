@@ -1,0 +1,45 @@
+CREATE DATABASE exempletp2;
+
+
+
+
+
+
+
+USE exempletp2;
+
+
+CREATE TABLE Employees ( 
+Id INT PRIMARY KEY,
+FLName VARCHAR(100),
+Salary INT,
+Gender VARCHAR(12),
+DepartmentId INT);
+
+
+INSERT INTO Employees VALUES (1,'Steffan', 82000, 'Male', 3),
+			     (2,'Amelie', 52000, 'Female', 2),
+			     (3,'Antonio', 25000, 'male', 1),
+			     (4,'Marco', 47000, 'Male', 2),
+			     (5,'Eliana', 46000, 'Female', 3);
+
+SELECT *
+FROM Employees;
+
+
+
+SELECT * FROM Employees
+WHERE Gender = 'Male'
+ORDER BY FLName;
+
+
+USE exempletp2;
+CREATE LOGIN Allassane 
+	WITH PASSWORD = '123456'
+
+CREATE USER AlF FOR LOGIN Allassane;
+
+
+sqlcmd -S DESKTOP-1TD8NB7 -U ALLassane -P 123456 -d exempletp2
+
+sqlcmd -S DESKTOP-1TD8NB7 -U ALLassane -P 123456 -d exempletp2 -i MaRequete.sql > Resultat.log

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<Html lang="fr" >
+    <head>
+        <meta charset="UTF-8" >
+        <title> ALL.NET </title>
+        <style type="text/css">
+
+	   /* Attribuer une couleur verte aux champs correctement remplis */
+		input:valid {
+	  	background-color: #ddffdd;
+		}
+
+		</style>
+	</head>
+	<body>
+		<form>
+			<p>
+				<!-- Input de type emeil mais en plus se termine par exelib.net --> 
+			<input type="email" placeholder="Email" pattern=".*exelib\.net$" required="required"/>
+			</p>
+			<p>
+				<!-- input de type password qui contient entre 6 et 8 caractères dont au moins un est impérativement un chiffre. -->
+			<input type="password" placeholder="Password" maxlength="8" pattern="(?=.*\d)(?=.*[a-z])\w{6,8}" required="required">
+			</p>
+			<input type="submit" value="Envoyer">
+		</form>
+		
+	</body>
+</html>
+<!--  Objectif :
+Crée un formulaire en html.
+Valider les champs en utilisant l'attribut html5 pattern et required.
+Utiliser  les expressions régulières.
+Énoncé :
+Créer le formulaire ci-dessous en utilisant des inputs et les attributs html5  qui permettent d'effectuer les vérifications  suivantes:
+Les champs sont obligatoires
+L’email doit se terminer par "exelib.net"
+Le password doit contenir entre 6 et 8 caractères dont au moins un est impérativement un chiffre exemple (passw12,5passwd...).
+Attribuer en css  une couleur de fond verte aux champs correctement remplis.  -->

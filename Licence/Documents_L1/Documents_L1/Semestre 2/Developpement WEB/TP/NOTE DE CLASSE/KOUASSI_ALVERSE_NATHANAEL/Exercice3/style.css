@@ -1,0 +1,19 @@
+table,tr,td{
+    border-collapse: collapse;
+}
+.table{
+    position:relative;
+    top:50px;
+    left:250px;
+    background-color: rgb(228, 155, 155);
+    font-size:30px ;
+}
+h3{
+    background-color:cadetblue;
+    position: relative;
+    text-align:center;
+    font-size: 50px;
+}
+body{
+    background-color: rgb(231, 239, 248);
+}

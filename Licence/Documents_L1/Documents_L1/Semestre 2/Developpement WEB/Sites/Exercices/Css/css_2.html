@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Checkbox</title>
+        <style type="text/css">
+            .ck_label{
+                display:inline-block;
+                width: 100px;
+                height: 40px;
+                cursor: pointer;
+                position: relative;
+            }
+            /* Cacher le bouton checkbox */
+             .btn_chb{
+                  display:none;
+             }
+             /* mettre tous les éléments "span" frères du bouton checkbox en inline-block pour pouvoir les aligner et changer leurs dimensions    */
+             .btn_chb~span{
+                 display: inline-block;
+                width: 100px;
+                height: 40px;
+                color:white;
+                 border-radius: 20px;
+                 vertical-align: middle;
+                 opacity: 0.7;
+                 font-size: 1.5em;
+                 line-height: 1.6;
+                 font-weight: bold;
+                          /* positionner tous les span par rapport à leurs parent "label" */
+                 position: absolute;
+                 top:0;
+                 left:0;
+        
+        
+             }
+             /* Style initial du span Non*/
+             #snon{
+                 background: #e74c3c;
+                 text-align: right;
+                padding-right:5px;
+                transition: all 0.5s ease;
+        
+             }
+             /* Style initial du span "OUI", avec "opacity=0" pour le rendre invisible*/
+              #soui{
+                 background: #2ecc71;
+                 text-align: left;
+                padding-left:5px;
+                opacity: 0;
+                transition: all 0.5s ease;
+             }
+              /* style du petit span rond */
+             #round{
+                 width: 40px;
+                height: 40px;
+                top:auto;
+                 border-radius: 100px;
+                background:white;
+                box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+                opacity: 1;
+                transition: all 0.5s ease; 
+               
+             }
+             /* Après changement de l’état du checkbox en "checked" par le clic
+         de l'utilisateur, on déplace le span rond et on affiche le span "OUI"  */
+             .btn_chb:checked ~ #round{
+                 left:70px;
+             }
+            .btn_chb:checked~#soui{
+                 opacity: 1;
+             }
+        
+            </style>        
+    </head>
+    <body>
+        <label class="ck_label">
+            <input type="checkbox" id="ch1" name="ch1" class="btn_chb"/>
+            <span id="snon">NON</span>
+            <span id="soui">OUI</span>
+            <span id="round"></span>
+          </label>
+    
+    </body>
+</html>
+
+
+
+<!--
+    Objectif:
+Personnaliser l'aspect  d'un checkbox.
+Utiliser les transition.
+Travail à faire:
+Appliquer les styles nécessaires pour personnaliser l'aspect d'un checkbox comme suit :
+
+checkbox
+checkbox
+Indication :
+Utiliser La balise <label> qui  vous permet de traiter  le clic sur l'étiquette, comme un clic sur le "checkbox" . Il existe deux façons de créer cette association:
+
+Enveloppez le checkbox par le label
+Associer le label avec le checkbox grâce à l'attribut "for" .
+
+-->

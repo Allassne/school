@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<Html lang="fr" >
+    <head>
+        <meta charset="UTF-8" >
+        <title> Formulaire.org </title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+    	<div>
+    		<form method="post" action="">
+    			<!--contenu du formulaire-->
+    			<p>
+	    			<label for="nom">Votre nom</label>
+	    			<input type="text" maxlength="10" value="" id="nom" name="nom" />
+	    		</p>
+	    		<p>
+	    			<label for="prenom">Votre prenom</label>
+	    			<input placeholder="Ex: Stephane" type="text" id="prenom" name="prenom" />
+	    		</p>
+	    		<p>
+	    			<label for="montext">Que souhaitez-vous me dire ?</label>
+	    			<textarea placeholder="..." name="montext" id="montext"></textarea>
+	    		</p>
+	    		<p> 
+	    			Quel Rapeur aimez vous?<br>
+	    			<input type="checkbox" id="damso" name="damso" />
+	    			<label for="damso">Damso</label>
+	    		</p>
+	    		<p>
+	    			<input type="checkbox" id="niska" name="niska" />
+	    			<label for="niska">Niska</label>
+	    		</p>
+	    		<p>
+	    			<input type="checkbox" id="gims" name="gims" />
+	    			<label for="gims">Gims</label>
+	    		</p>
+	    		<p> Vous etes :
+	    			<input type="radio" name="sexe" value="femme" id="femme" />
+	    			<label for="femme"> Une FEMME</label>
+	    			<input type="radio" name="sexe" value="homme" id="homme" 
+	    			checked="" />
+	    			<label for="homme"> Un HOMME </label>
+	    			<input type="radio" name="sexe" value="nps" id="nps" />
+	    			<label for="nps"> je prefere ne pas le dire </label>
+	    		</p>
+	    		<p>
+	    			<label for="pays">De quel pays venez vous ?</label>
+	    			<select name="pays" id="pays">
+	    				<option value="France">France</option>
+	    				<option value="France">Espagne</option>
+	    				<option value="France">Royaume-Uni</option>
+	    			</select>
+	    		</p>
+	    		<p>
+	    			<label for="password"> Entrer votre mot de passe</label>
+	    			<input type="password" id="password" name="password" />
+	    		</p>
+	    		<p>
+	    			<input type="reset" Value="remettre a zeros" />
+	    			<input type="submit" value="Envoyer" disabled />
+	    		</p>
+	    		<p>
+	    			<button type="button">Cliquer moi</button>
+	    			<button type="reset">Reset</button>
+	    			<button type="submit">Valider</button>
+	    		</p>
+	    			<h2> Cachez moi ce champ ! </h2>
+	    			<input type="hidden" name="key" value="masupercleesecrete" />
+	    			<label for="nom">Nom</label>
+	    			<input type="text" name="nom" id="nom" />
+	    		<p>
+	    			<input name="myfile" type="file" />
+	    		</p>
+    		</form>
+    	</div>
+    </body>
+</Html>

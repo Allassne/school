@@ -1,0 +1,29 @@
+N oubliez pas d installer l outil SQLCMD en cliquant 2 fois sur MsSqlCmdLnUtils.msi qui se trouve dans le dossier OUTILS_ASSRI que je vous ai Remis aujourdhui
+
+ RobertYave: Pour le TP2 question 
+1. Dans le fichier SQL (MaRequete.sql)
+Exemple pour la gestion du INPUT.
+declare @prenom varchar(30) = '$(input)'; /* Pour permettre l'accès au INPUT du bat dans la commande SQLCMD avec l'option -v */
+SELECT FirstName, LastName, Department, EndDate  
+FROM HumanResources.vEmployeeDepartmentHistory
+WHERE FirstName = @prenom;
+
+2. Dans le fichier bat (qui se termine par .bat ou .cmd)
+
+@echo off
+:: Syntaxe: sqlcmd -S %ServerName% -U "%UserName%" -P "%Password%" -d "%DatabaseName%" -I -i "%SQLFileName.sql%" > %mylog%
+ TITLE Demonstration: Comment executer une requête SQL à partir d'un fichier script batch  
+ECHO Entrez le Prénom (case sensitive)  
+ SET /p FName=Le Prenom est: 
+IF EXIST Resultat.log del Resultat.log
+ SET mylog=Resultat.log
+ EC…
+[12:38 a.m., 2022-12-06] RobertYave: Exercice 1 Question 2) et Exercice 3 question a)
+[12:42 a.m., 2022-12-06] RobertYave: En passant pour la redirection (output) on peut aussi utiliser l'option  -o c:\Resultat.log
+[12:43 a.m., 2022-12-06] RobertYave: Par exemple on aura: sqlcmd -S DESKTOP-4B17HD7 -U pc -P 123456 -d exempletp2 -i MaRequete.sql -o Resultat.log
+
+
+Et enfin l'option -I est pour le standard ISO concernant les doubles guillements.  Il permet donc de l'activer (ON). Car par défaut il est OFF.
+
+
+

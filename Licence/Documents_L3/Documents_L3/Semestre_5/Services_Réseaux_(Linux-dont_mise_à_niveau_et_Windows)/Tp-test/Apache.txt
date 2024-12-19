@@ -1,0 +1,39 @@
+
+-------------------------MSE EN PLACE DU SERVICE APACHE-------------------------
+Apres avoir creer notre domaine upb.lan, nous allons mettre en place le service apache.
+
+Installer apache avec la cmd: sudo apt install apache2
+
+Apres installation, on se rend dans le repertoire apache2 avec la cmd: cd /etc/apache2
+  -lister ce repertoire
+  -Ouvrir le repertoire sites-available et lister vous verrez le fichier 000-default.conf , c'est le fichier de config du site par defaut
+  -Copier ce fichier en site-upb.lan.conf 
+	sudo cp 000-default.conf site-upb.lan.conf   (rassurez vous d'etre dans le repertoire sites-available, sinon, on specifie le chemin)
+  -Ouvrir site-upb.lan.conf avec: sudo nano site-upb.lan.conf 
+	 ajouer la ligne suivante:  ServerName upb.lan  (juste au dessus de ServerAdmin)
+	 modifier /var/www/html en /var/www/site-upb
+   -Se rendre dans /var/www/  et lister (vous devriez le repertoire html, il contient le site de test )
+  -On cre notre repertoire site-upb (Ce dernier contiendra notre site)
+	sudo mkdir site-upb
+  -Nous copier le fichier index.html du repertoire html vers site-upb
+	sudo cp html/index.html /site-upb/index.html
+
+NB: En pratique, on ne fait pas cette copie de index.html. Mais, on cre plutot notre propre site qui sera depose dans site-upb.
+
+Redemarer apache2
+	systemctl restart apache2.service 
+	systemctl reload apache2.service (pour charger la nouvelle config sans arreter le srvice)
+
+Activer notre fichier de config
+	sudo a2ensite site-upb.lan.conf
+
+Onp eut verifer le status
+	systemctl status apache2.service 
+
+------------------------------------------TEST--------------------------------------
+
+Depuis le navigateur d'un client, tapez:  upb.lan  (une page web Ubuntu devra apparaitre)
+
+Vous pouvez modifier le fichier index.html selon votre convenance et actualiser la page depuis le client .
+
+--------------------------------------MERCI-------------------------------------------

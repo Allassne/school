@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Positionnement</title>
+        <style type="text/css">
+            /* Pour centrer l’élément on utilise la propriété margin:auto */
+                .article{
+                    position: relative;
+                    background: #C0C0C0;
+                    width: 300px;
+                    height: 300px;
+                    margin: auto;
+                }
+                /* position:absolute permet de positionner "details" par rapport à son plus proche 
+                ancêtre positionné , ce qui nous mène à ajouter une position relative à son conteneur 'article'  */
+                .details{
+                    position: absolute;
+                    left:80px;
+                    top:100px;
+                    border: 1px solid rgba(0,0,0,.3);
+                    background: #4477FF;
+        
+                }
+        
+                
+                .fix{
+                    position: fixed;
+                    right:0;
+                    bottom: 0;
+                    background: #3355FF;
+                    width: 80px;
+                    height: 30px;
+                    color: #fff;
+                }
+            </style>
+        
+    </head>
+    <body>
+        <div class="article">Block1
+            <div class="details"> 
+             
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+            </div>
+        </div>
+        <div class="fix">
+            fix
+        </div>
+    
+    </body>
+</html>
+
+<!--
+    Objectif :
+Positionner  des éléments dans une page web grâce à la propriété position.
+
+Énoncé 
+On considère le code html suivant composé de trois div:
+Placer les éléments de ce document sous la forme suivante : 
+posionnement-css
+
+ Indications
+Le block1 doit être centré horizontalement dans la page.
+Placer le block2 (classe "details") par rapport à son conteneur block1: à 80px du gauche et 100px du haut .
+Fixer l’élément possédant la classe "fix" en bas à droite de la fenêtre du navigateur.
+
+-->

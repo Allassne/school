@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8"/>
+	<title> Preference.org</title>
+</head>
+<body>
+	<h1>MES MEILLEURS</h1>
+	<P>Retour à <a href="../Index.html" title="accueil du site"> l'accueil</a></P>
+    <UL>
+        <LI><h3>MES MEILLEURS FILMS</h3></LI>
+        <ol>
+            <li>Avengers</li>
+            <li>ça</li>
+            <li>IPman4</li>
+        </ol>
+        <LI><H3>UNE AUTRE LISTE</H3></LI>
+        <li><h3>MES MEILLEURS RAPEURS</h3></li>
+        <ul>
+            <li>DAMSO</li>
+            <li>NISKA</li>
+            <li>GIMS</li>
+        </ul>
+        <LI><H3>UN AUTRE TRUC</H3></LI>
+    </UL>
+        <ul>
+            <li><a href="#home">HOME</a></li>
+        </ul>
+    <hr>
+     <table>
+         <caption>prix du marche</caption>
+         <tr>
+             <th colspan="2">titre</th>
+         </tr>
+         <tr>
+             <th>fruits</th>
+             <th>poids</th>
+             <th>prix</th>
+             <th rowspan="3">Total</th>
+         </tr>
+         <tr>
+             <td>kiwi</td>
+             <td>3kg</td>
+             <td>2 euros</td>
+        <tr>
+            <td>banane</td>
+             <td>2kg</td>
+             <td>1 euro</td>
+        </tr>
+         </tr>
+     </table>
+     <hr>
+     <div>
+             <form method="post" action="">
+                <p>
+                     <label for="NOM">Votre NOM</label>
+                    <input maxlength="9" type="text" id="NOM" name="NOM" />
+                </p>
+                <p>
+                     <label for="name">Votre Prenom</label>
+                    <input placeholder="ex: Stephane" type="text" id="name" name="NOM" />
+                </p>
+                <p>
+                    <label for="text">Que souhaitez vous me dire ?</label>
+                    <textarea name="montext" id="text" placeholder="..." ></textarea>
+                </p>
+                <P> <b>quel type de musique aimez vous ?</b></P>
+                    <p>
+                        <input  type="checkbox" id="Jazz" name="Jazz" />
+                        <label for="Jazz">JAZZ</label>
+                    </p>
+                     <p>
+                        <input  type="checkbox" id="rock" name="ROCK" checked />
+                        <label for="rock">ROCK</label>
+                    </p>
+                    <p>
+                        <input  type="checkbox" id="pop" name="POP" />
+                        <label for="pop">POP</label>
+                    </p>
+                    <p> Vous etes :
+                        <input type="radio" name="sexe" valeur="femme" id="femme" /><label for="femme" >une Femme</label>
+                        <input type="radio" name="sexe" valeur="homme" id="homme" checked /><label for="homme" >un homme</label>
+                        <input type="radio" name="sexe" valeur="nsp" id="nsp" /><label for="nsp" >c'est privee</label>
+                    </p>
+                    <p>
+                        <label for="pays">Votre Pays est: </label>
+
+                        <select name="pays" id="pays">
+                            <option valeur="france" >FRANCE</option>
+                            <option valeur="allemagne" >ALLEMAGNE</option>
+                            <option valeur="chine" >CHINE</option>
+                            <option valeur="espagne" >ESPAGNE</option>
+                            <option valeur="cote_d'ivoire" >COTE D'IVOIRE </option>
+                        </select>
+                    </p>
+                    <P>
+                        <input type="reset"  value="Remettre a Zeros" disabled />
+                        <input type="submit"  value="Envoyer" />
+                    </P>
+                    <p>
+                        <button type="button" disabled > Cliquer moi </button>
+                        <button type="reset"> Remettre a zeros </button>
+                        <button type="submit"> Valider </button>
+                    </p>
+                    <p>
+                        <label for="pass">Entrer votre mot de passe </label>
+                        <input  type="password" id="pass" name="pass" >    
+                    </p>
+             </form>        
+        </div>
+</body>
+</html>

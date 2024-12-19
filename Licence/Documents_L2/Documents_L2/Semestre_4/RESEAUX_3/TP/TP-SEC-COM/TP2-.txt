@@ -1,0 +1,3 @@
+Non, l’état du port n'a pas changé 
+show ip interface brief [show interfaces f0/1 status]
+switchport port-security violation shutdown

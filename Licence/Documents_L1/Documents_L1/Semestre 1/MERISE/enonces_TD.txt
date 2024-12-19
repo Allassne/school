@@ -1,0 +1,163 @@
+Exercice 4 page 47:
+
+Enoncé modifié
+
+1°) Lire les notes prises à la suite de l'interview
+
+2°) Récencer toutes les fonctions élémentaires et les regrouper dans
+des domaines
+
+3°) Représenter le MCC complet
+
+
+Correction:
+
+1°) Les fonctions élémentaires et regroupement en domaines (ou acteurs
+internes)
+
+premier domaine: Former
+- Examiner élèves (+Noter les élèves)
+- Dispenser des cours
+- Définir l'enseignement
+- Définir horaires de cours
+
+deuxième domaine: Placer (Gerer les stages)
+- Trouver des stages pour les élèves
+- Contacter les anciens éléves
+- Déclarer les stages
+- Superviser les stages
+
+
+Troisième: sélectionner
+- Sélectionner les candidats à l'entrée
+
+
+Exercice 22: MCD du domaine former
+
+Lire l'interview de l'exercice 4 puis l'énoncé de l'exercice 22 et
+faire le MCD du domaine former directement.
+
+Indication: Pour faire le MCD, il faut trouver les règles de
+gestion. Les règles de gestion sont des phrases dont les noms au
+singulier représentent les types-entités et les verbes représentent
+les types-association.
+
+
+Règles de gestion trouvées
+
+Un professeur peut enseigner dans une matière (information sur la
+spécialité des professeurs)
+
+Un cours est dispensé par un professeur
+
+Un cours concerne une année et une matière
+
+Un cours fait partie d'un enseignement (un enseignement c'est
+l'ensemble des cours dispensés pour une année donnée dans une même
+matière)
+
+Un cours a lieu dans une salle
+
+Un élève est inscrit dans une option (voir option comme la classe)
+
+Un cours est assisté par des élèves
+
+Un examen concerne un enseignement
+
+Des élèves composent dans un examens
+
+Une option comprend des matières
+
+
+Sujet-TD4.pdf (A prendre dans canal général puis onglet fichiers)
+
+Faire l'exercice 2
+
+La base de données modélisée vise à enregistrer les malades qui
+visitent un hôpital. De temps en temps, un malade peut séjourner dans
+un des services de l'hôpital.
+
+1°) Redessiner le MCD en respectant le formalisme vu en cours.
+Choisir un identifiant dans chaque type-entité et le signifier dans le
+MCD. Proposer les cardinalités dans le MCD. Y a t-il des propriétés
+qui manquent? Pourquoi? Les ajouter au MCD.
+
+2°) Dire pourquoi ce MCD ne respecte pas la forme normale de Boyce
+Codd.
+
+3°) Corriger le MCD afin que la forme normale de Boyce Codd soit
+respectée
+
+4°) Traduire le MCD normalisé dans un schéma relationnel (MLD
+relationnel)
+
+1°)
+
+Rappel définition d'identifiant: Un ensemble minimal de propriétés qui
+identifie à coup sûr une occurence.
+
+Conséquence: les valeurs prises par l'identifiant sont uniques dans
+une même table.
+
+Autre conséquence: Toutes les autres propriétés ne faisant pas partie
+de l'identifiant dépendent fonctionnelement de l'identifiant.
+
+Il faut ajouter date_maladie. Et date_maladie doit faire partie de
+l'identifiant de est_malade afin qu'on puisse enregistrer un même
+malade plusieurs fois pour la même maladie.
+
+N.B.: En général on choisi l'identifiant d'un type-association en
+faisant la concaténation des identifiants des types-entités qui lui
+sont reliés. Parfois, il est nécessaire de compléter cet identifiant
+avec d'autres propriétés. Il est possible de choisir carrément
+d'autres propriétés.
+
+2°)
+
+Rappel des formes normales
+
+1 FN: Tous les types-entités et tous les types-association possèdent
+un identifiant. Toutes les propriétés sont atomiques
+
+2 FN: Les MCD doit d'abord être en 1 FN. Toutes les DF sont
+élémentaires
+
+3 FN: Les MCD doit d'abord être en 2 FN. Toutes les DF sont
+directes
+
+BCFN: Les MCD doit d'abord être en 3 FN. les seuls DF élémentaires
+sont celles dont un identifiant détermine une propriétés.
+
+Id_malade, Id_assurance, Id_service_hopital  ---> Nom_malade n'est pas
+élémentaire car Id_assurance et Id_service_hopital sont superflues
+dans cette DF. Donc le MCD n'est pas BCFN.
+
+Technique pour normaliser rapidement le MCD. Récenser toutes les DF
+élémentaires et directes. Ainsi on en deduit les identifiants des
+différents types-entités et types-association. Et donc, on en déduits
+les différents types entités et leurs relation.
+
+Id_malade  ---> Nom_malade  (Type-entité Malade)
+Id_assurance ---> Id_malade, Nom_assurance, Date_debut_assurance, Date_fin_assurance 
+Id_service_hopital ---> Nom_service_hopital (Type-entité Serve Hopital)
+Id_malade, Id_service_hopital, Date_debut_sejour ---> Date_fin_sejour
+(difficile. Ici le même malade aura le droit de séjourner plusieur
+fois dans le même service)
+Code_maladie ---> Nom_maladie, Type_maladie
+Type_maladie ---> Lybelle_type_maladie
+
+
+Attention à la différence entre propriété et type-entité.
+
+Un malade possède un nom (une phrase qui permet de connaitre une propriété)
+
+Règle de gestion pouvant lier Malade à service hopital. Un malade peut
+séjourner dans un service de l'hopital. Ici on ne peut pas dire que le
+service hopital fait partie des propriétés du malade
+
+
+DF
+
+Exercice 57 (exos MERISE)
+
+Faire MCC, MCT et MOT

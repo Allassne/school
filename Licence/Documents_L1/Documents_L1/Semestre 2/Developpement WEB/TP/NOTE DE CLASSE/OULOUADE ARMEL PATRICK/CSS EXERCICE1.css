@@ -1,0 +1,19 @@
+table{
+	border-style: solid;
+	padding: 1cm;
+	width: cm
+	border-radius: 3cm
+	border-style: double;
+	float: left;
+	background-color: aliceblue;
+	text-align: center;
+	text-transform: capitalize;
+}
+
+	body{
+	background: url("ject/arick.jpg") no-repeat;
+	background-size: cover;
+}
+form,td,th{
+	color: orange;
+	}

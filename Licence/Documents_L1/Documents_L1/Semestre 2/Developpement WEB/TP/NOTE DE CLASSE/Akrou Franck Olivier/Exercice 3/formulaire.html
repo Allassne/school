@@ -1,0 +1,43 @@
+<DOCTYPE html>
+    <html>
+        <head>
+            <met charset= "utf-8"></met>
+            <title> Le Formulaire</title>
+            <link rel="stylesheet" href="form.css">
+            <!--<>=#-->
+        </head>
+        <body background="image/tre.png" style="text-align: center;">
+            <nav class="nav">
+                <a href="exo3.html"><strong>Accuei</strong></a>
+                <a href="tdm.html" >Table de multiplication</a>
+                <a href="formulaire.html" >Formulaire</a>
+                <a href="parc.html">Parcours</a>
+            </nav>
+            <marquee><h1>FORMULAIRE DE RENSEIGNEMENT</h1></marquee>
+                <form method="POST" action="traitement.php"></form>
+    <p>
+        <fieldset  style="background-color: rgb(221, 221, 238);" >
+                <span class="tr">Civilité</span> :
+                <input  type="radio" name="civilite"  value="Monsieur"> <label class="ho" for="Mr">Mr</label>
+                <input  type="radio" name="civilite" value="Madame"> <label class="fem" for="Mme">Mme</label>
+                <input  type="radio" name="civilite" value="Mademoiselle"> <label class="mlle" for="Mlle">Mlle</label><br>
+                <p><label class="tr" >Nom</label> : <input style="margin-left: 7%" type="text" name="firstname"/></p>
+                <p><label class="tr">prenom</label> : <input style="margin-left:6%" type="text" name="name"/></p>
+                <label class="tr" for="age">Date de naissance :</label>
+                <input style="margin-left: 1%" type="date">
+                <p> 
+            <pre>
+            <label class="te" >Numero :</label><input style="margin-left: 3%" type="number" nom="numero"> <label class="te" >Rue :</label><input style="margin-left: 1%" type="text" nom="rue"><br />
+<label class="tr" >Adresse</label > :
+            <label class="te">Code postal :</label><input type="text" nom="Codepostal"> <label class="te" >Ville :</label><input type="text" nom="ville">
+            </pre>
+                </p> <br/>
+            <p><label class="tr" >Téléphone</label> : <input style="margin-left: 1%" type="tel" name="numero"><br></p>
+            <p><label class="tr" >Email</label> : <input style="margin-left: 3%" type="email" name="email" ></p>
+            <input class="te" type="submit" value="Envoyer"> <input class="ty" type="reset" value="Remise a zero">
+            
+        </fieldset>
+    
+    </p>    
+</body>
+     </html>

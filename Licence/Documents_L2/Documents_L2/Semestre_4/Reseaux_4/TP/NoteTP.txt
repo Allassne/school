@@ -1,0 +1,40 @@
+en
+conf t
+hostname S1
+vlan 10
+vlan 20
+name Admin
+exit 
+vlan 10
+name Etudiants
+exit
+int range f0/20-21
+switchport mode access 
+switchport access vlan 20
+int range f0/10-11
+switchport mode access 
+switchport access vlan 10
+exit
+int g0/1
+switchport mode trunk
+exit
+
+
+
+
+
+en
+conf t
+hostname R1
+ip dhcp excluded-address 192.168.10.1
+ip dhcp pool R1-LAN
+network 192.168.10.0 255.255.255.0
+default-router 192.168.10.1
+exit
+int gigabitEthernet 0/0
+no shutdown
+exit
+int g0/0.1
+encapsulation dot1Q 10
+ip address 192.168.10.1 255.255.255.0
+exit

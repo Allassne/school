@@ -1,0 +1,85 @@
+EXERCICE I
+
+1. Citez trois principales distinctions entre la 2G et la 3G.
+    -Elles utilisent des bandes de fréquences comprises entre 900MHz et 2100MHz pour la 3G & entre 900MHz et 1800MHz pour la 2G...
+    -La 3G a une vitesse de transmission de données plus élevée que la 2G...
+    -En plus d'etre une technologie de communicaton mobile qui permet de passer des appels vocaux et d"envoyer des messages texte, la 3G permet d'accéder a internet a haut débit...
+.......................................................................................................................................................................................................................................
+2. Définissez de facon générale la notion de HANDOVER.
+    Dans quelles circonstances intervient-il ?
+    -La notion de HANDOVER est le transfert d'une communication en cours d'un canal radio a un autre.
+    -Il intervient lorsque l'utilisateur se déplace dans une zone où la qualité du signal est faible ou d'un réseau à un autre.
+.......................................................................................................................................................................................................................................
+3. Une station GSM 900 et une station GSM 1800 se brouillent elles ? Justifiez.
+    -Les stations GSM900 et GSM1800 ne se brouillent pas.
+    -Elles utilisent des bandes de fréquences différentes
+.......................................................................................................................................................................................................................................
+4. Définissez le controle de puissance.
+   Pourquoi l'utilise-t-on dans un réseau ?
+   -Le contrôle de puissance est une technique utilisée pour régler la puissance de transmission d'un signal dans un réseau.
+   -Il est utilisé pour éviter les interférences et les pertubations dans le réseau.
+.......................................................................................................................................................................................................................................
+5. Définissez la distance de réutilisation dans le concept cellulaire.
+   -La distance de réutilisation est la distance minimale entre deux cellules utilisant la même fréquence dans un réseau cellulaire.
+   -Elle est déterminée par le motif de réutilisation qui est un ensemble de cellules dans lequel chaque fréquence est utilisée une et une seule fois.
+........................................................................................................................................................................................................................................
+6. Qu'est-ce que le concept cellulaire ?
+    Citez en trois caractéristiques.
+    -Le concept cellulaire est une technique de communication sans fil qui divise une région géographique en petites zones appelées cellules.
+    -Les trois caractéristiques sont:
+       ° La réutilisation des fréquences
+       ° La diminution des interférences
+       ° L'augmentation de la capacité du réseau
+.......................................................................................................................................................................................................................................
+7. Citez les quatre groupes de canaux logiques et un exemple de canal de chaque groupe.
+    Vous pouvez faire un tableau.
+    -Les trois groupes de canaux logiques sont:
+       ° Canaux Logiques dédiés qui sont affectés a une communication particulière CANAL SDCCH(Stand-alone Dedicated Control Channel)
+       ° Canaux Logiques non dédiés qui sont affectés a la cellule pour l'ensemble des MS CANAL BCCH (Broadcast Control CHannel)
+       ° Canaux Logiques Communs qui sont utilisés pour signalisation et le contrôle du réseau CANAL RACH (Random Access CHannel)
+
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+EXERCICE 2
+1
+    -L'opérateur opte pour la planification cellulaire pour optimiser l'utilisation de ses fréquenses et ainsi fournir une couverture efficace et fiable sur tout le territoire en évitant tout conflit de fréquence entre les différentes cellules.
+   -Elle permet également d'augmenter la capacité réseau, car elle permet la réutilisation éfficace des memes fréquences dans differentes cellules sans interférences majeures.
+
+2
+-Pour une planification cellulaire de taille k=3, chaque cellule aura 6 vosines.
+-Pour éviter les interférences radio, chaque cellule doit utiliser des fréquences différentes de celles de ses 6 voisines
+  Méthode d'affection de fréquence:
+  .La cellule centrale utilise la frequence 1
+  .Les 6 cellules voisines utilisent les fréquences de 2 a 7 dans l'ordre
+  .Les 12 cellules en deuxième anneau utilisent les fréquences 8 a 13 dans l'ordre
+  .Les 18 cellules zn troisième anneau utilisent les frequences 4 a 10 et 1 dans l'ordre
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+EXERCICE 3
+
+a- La constante k dépend des conditions environnementales et des caractéristiques des antennes.
+  -Pour des conditions d'espaces libres, k=-27,55dB.
+
+b- En utilisant la formule P(dBm)= 10log10(P(mW))+30, on peut exprimer la puissance émise :
+   P(dBm)=10log10(100)+30= 20dBm
+   P(dBW)=P(dBm)-30= -10 dBW
+
+c- Pour connaitre la puissance reçue en espace libre, on utilise l'equation Ao(dB)= k+20log10(f)+20log10(d), en isolant la puissance reçue:
+    Ao(dB)= 20log10(Pem)+ Ge + Gr -27,55
+    
+    P(dBm) = (Ao + 27,55 - Ge - Gr - 20log10(f)/20 - 30
+    
+    Pour d=100m:
+    P(dBm) = (-27,55 + 20log10(900e6)+ 20log10(100)+ 3 + 10)/20 - 30 = -85,93dBm
+
+    Pour d=1km: -95,93dBm
+
+
+    Pour d=10km: -105,93 dBm
+
+   On constate une diminution de la puissance reçue avec l'augmentation de la distance. 

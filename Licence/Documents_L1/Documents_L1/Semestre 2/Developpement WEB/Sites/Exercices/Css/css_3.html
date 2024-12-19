@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Checkbox</title>
+        <style type="text/css">
+            body{
+                background: #FFFF77;
+            }
+              .view{
+                  position: relative;
+                  width: 300px;
+                  height: 200px;
+                  border:10px solid #fff;
+                  overflow: hidden; /*Pour caché l'élément ".mask" qui contient la description de l'article */
+                  float: left;
+                  margin: 5px;
+              }
+        
+              .view img{
+                  width: 300px;
+                  height: 200px;
+              }
+              .mask{
+                  position: absolute;
+                  left: 0;
+                  top:200px;
+              /*Pour positionner l'élément ".mask" au dessous de l'article */
+                  background: rgba(0,0,0,0.3);
+                  color:white;
+                  text-align: center;
+                  width: 300px;
+                  height: 200px;
+                  /* transition sur la propriété top qui change de 200px à 0 pendant le hover  */
+                  transition: top 0.7s linear;
+              }
+              .mask a{
+                 text-decoration: none;
+                 color: white;
+                font-size: 1.5em;
+                font-family: fantasy,sans-serif;
+                background: #000;
+                padding: 5px 10px 5px 10px;
+                border-radius: 5px;	
+                    
+             }
+             /* changement de la position du ".mask" pendant le survol sur .view */
+             .view:hover> .mask{
+                top:0;
+             }
+           
+             
+            </style>
+        
+    </head>
+    <body>
+        <section>
+            <article class="view">
+                
+                <img src="/images/img1.jpg" alt="" />
+                <div class="mask">
+                    <h2>Titre de l'article</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                    <a href="#" > Read More </a>
+                </div>
+            </article>
+            <article class="view">
+        
+                <img src="/images/img2.jpg" alt="" />
+                <div class="mask">
+                    <h2>Titre de l'article</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                    <a href="#" > Read More </a>
+                </div>
+            </article>
+            
+        </section>
+        
+    </body>
+</html>
+
+<!--
+    Objectif:
+Utiliser les transitions
+Animer les articles au survol de la souris.
+Travail à Faire :
+Sur la base d'un document html contenant un ensemble d'articles , chaque article possède une image ,un titre  une description et un bouton "Read More" qui envoie vers les détails de l'article , Créer une animation au survol d'un article en utilisant les transition comme illustré sur l'image ci-dessous :
+
+-->

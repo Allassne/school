@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>Styler les listes</title>
+    <style type="text/css">
+/*  Styler la première liste à puces avec des formes triangulaires :*/
+        .list1 li{
+	 	    list-style: none;
+	    }
+            /* Ajouter un élément avec un contenu vide et une largeur et hauteur nulles directement avant les "li" */
+        .list1 li:before{
+            content: "";
+            width: 0; 
+            height: 0; 
+      /*Ajouter une bordure de 5px , ce qui va construire 4 triangles  */
+        border: 5px solid black; 
+        /* Rendre les triangles de haut de droite et de bas transparents */
+        border-top-color: transparent; 
+        border-right-color: transparent; 
+        border-bottom-color: transparent;
+        /* aligner les triangle avec le texte */
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+        }
+/*Styler la deuxième liste à puces avec des losanges : */
+        .list2 li{
+	 	    list-style: none;
+	    }
+        .list2 li:before{
+		content: "";
+    	border: 2px solid blue;
+    	display: inline-block;
+    	height: 4px;
+        width: 4px;
+    	vertical-align: middle;
+    	transform:rotate(45deg);
+    	margin-right: 5px;
+        }
+/* Numéroter la troisième liste à puces avec des compteurs css : */
+
+    /* Initialiser le compteur c1 */
+    .list3{
+        counter-reset: c1;
+        list-style-type:none;
+        }
+    .list3 li{
+	margin-bottom: 5px;
+    }
+	
+    .list3 li:before{
+    /* Incrémentation  du compteur c1 avant  chaque li */
+    counter-increment: c1;
+    /* Attribuer la valeur du compteur c1 au contenu de l’élément qui vient directement avant les "li"*/
+    content: counter(c1); 
+    /* Design du contenu */
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 1px 5px;
+    color: white;
+    background-color: blue;
+    margin-right: 5px;
+    font-weight: bold;
+	 }
+    </style>
+</head>
+<body>
+
+    <ul class="list1">
+    	<li>Item1</li>
+    	<li>Item2</li>
+    	<li>Item3</li>
+    	<li>Item4</li>
+    </ul>
+    <ul class="list2">
+    	<li>Item1</li>
+    	<li>Item2</li>
+    	<li>Item3</li>
+    	<li>Item4</li>
+    </ul>
+    <ul class="list3">
+    	<li>Item1</li>
+    	<li>Item2</li>
+    	<li>Item3</li>
+    	<li>Item4</li>
+    </ul>
+</body>
+</html>
+
+<!--Objectifs:
+Styler les listes à puce  en css
+Utiliser le pseudo élément ":before"
+Utiliser un compteur css "counter" pour  numéroter les listes
+Énoncé :
+En utilisant le pseudo élément ":before"  ajouter directement avant chaque item de la liste une forme triangulaire, comme illustré  sur l'image  :
+puce-traingulaire
+Vous pouvez créer un triangle en utilisant une boite  avec une largeur et une hauteur  nulles . Mais vous devez appliquer une couleur  transparente aux  3 bordure à cacher et il vous reste une bordure visible (dans cet exemple la bordure de gauche). 
+
+Même question mais cette fois ci ajouter des puces sous forme de losange :
+puce-losange
+Utiliser un compteur css pour numéroter les listes à puce , en lui appliquant les styles css (voir image)  :
+liste-avec-compteur
+-->

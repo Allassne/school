@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<Html lang="fr" >
+    <head>
+        <meta charset="UTF-8" >
+        <title> ALL.NET </title>
+    </head>
+
+    <body>
+        <!-- la balise abbr pour définir une abréviation -->
+        <h1><abbr title="Extensible Markup Language">XML</abbr> Schema</h1>
+        <h2>Defnition</h2>
+        <p><b><abbr title="Extensible Markup Language">XML</abbr> Schema</b> publié comme recommandation par le W3C en mai 2001 est un langage de description de format de document XML permettant de définir la structure et le type de contenu d'un document XML. Cette définition permet notamment de vérifier la validité de ce document.</p>
+        
+        <h2>Modèle de XML Schema</h2>
+        <p>La recommandation spécifie la validation des documents XML à partir d'un modèle abstrait ; elle en fournit le format XML.Pour ce modèle abstrait, un schéma est un ensemble de composants
+        
+        <h2>Exemple</h2>
+        <!-- la balise code pour définir un block de code cependant ila faut remplacer les élements "<" et ">" par les entités &lt; et  &gt; , tandis que la balise "pre" affiche le code tel qu'il est écrit.  -->
+              <code>
+                 <pre>
+                     &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                  &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+                    &lt;xs:element name="personne"&gt;
+                          &lt;xs:complexType&gt;
+                            &lt;xs:sequence&gt;
+                                  &lt;xs:element name="nom" type="xs:string" /&gt;
+                                  &lt;xs:element name="prenom" type="xs:string" /&gt;
+                                  &lt;xs:element name="date_naissance" type="xs:date" /&gt;
+                                  &lt;xs:element name="etablissement" type="xs:string" /&gt;
+                                  &lt;xs:element name="num_tel" type="xs:string" /&gt;
+                            &lt;/xs:sequence&gt;
+                          &lt;/xs:complexType&gt;
+                    &lt;/xs:element&gt;
+                  &lt;/xs:schema&gt;
+                </pre>
+            </code>
+        <hr>
+            <!-- la balise "u" souligne le texte , la balise "i" pour le mettre en italic le texte et la balise "q" pour en valeur les  citations courte. -->
+             <p><u>citation</u>:
+                 <q>Les données sont une chose précieuse et dureront plus longtemps que les systèmes eux-mêmes. </q> (<i>Time berner lee</i>)
+             </p>
+            
+    </body>
+    
+</html>
+    
+
+<!--  Objectif :
+Dans cet exercice on va utiliser les balises html de mise en forme.
+
+Travail à faire
+Réaliser une page html composée des éléments suivants (exemple ci-dessous) :
+
+un titre de niveau 1 composé d'une abréviation "XML" sans oublier de mentionner sa signification au niveau de l'attribut "title".
+un titre de niveau 2 et un paragraphe.
+le titre "exemple" contient un code xml préformaté (comme illustré sur l'image).
+une ligne horizontale
+un paragraphe contenant  : le mot "citation" souligné suivi d'une citation courte et le nom de l'auteur en italique .         -->

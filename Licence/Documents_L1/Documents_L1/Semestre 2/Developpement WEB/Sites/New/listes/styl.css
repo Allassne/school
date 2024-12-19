@@ -1,0 +1,17 @@
+ol{
+	list-style-type:upper-alpha; 
+}
+ul#musq{
+	list-style-type: square;
+	/* list-style-image: url("fond.jpg");*/ 
+}
+img{
+	max-width: 100%;
+	max-height: 100%;
+}
+div{
+	color: #fff;
+	background:black url("fond.jpg") no-repeat center;
+	width: 500px;
+	height: 800px;
+}

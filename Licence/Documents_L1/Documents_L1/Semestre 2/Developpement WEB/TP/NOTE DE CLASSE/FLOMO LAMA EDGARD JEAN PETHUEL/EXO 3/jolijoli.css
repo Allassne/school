@@ -1,0 +1,56 @@
+
+ body 
+  {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    background-color: rgb(179, 118, 28);
+  }
+  .entete
+ {
+    padding: 80px;
+    text-align: center;
+    background-image: url(PIC/vue/upb.jpg);
+    background-attachment: fixed;
+   background-repeat: no-repeat;
+    color: white
+  }
+  
+  .entete h1 
+  {
+    font-size: 40px;
+  }
+  .barre2nav 
+  {
+    overflow: hidden;
+    background-color: #333;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+  }
+  
+  .barre2nav a 
+  {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+  .barre2nav a:hover 
+  {
+    background-color: crimson;
+    color: rgb(255, 255, 255);
+  }
+  fieldset
+  {
+      background-color: grey;
+  }
+  table
+  {
+      background-color: white;
+  }
+  th:hover
+  {
+      background-color: aqua;
+  }

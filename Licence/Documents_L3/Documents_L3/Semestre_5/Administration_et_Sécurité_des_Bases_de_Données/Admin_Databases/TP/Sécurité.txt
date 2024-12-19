@@ -1,0 +1,115 @@
+C:\Users\Allassane BAMBA\Documents\SQL Server Management Studio\Policies\Surface Area Configuration_20221215.xml
+
+
+PS C:\Users\Admin> Invoke-PolicyEvaluation - "C:\Users\Allassane BAMBA\Documents\SQL Server Management Studio\Policies\Surface Area Configuration_20221215.xml" -TargetServerName 'DESKTOP-1TD8NB7'
+PS C:\Users\Admin> Get-ChildItem "C:\Users\Allassane BAMBA\Documents\SQL Server Management Studio\Policies" | Where-Object { $_.PolicyCategory -eq "Surface Area Configuration_20221215.xml" } | Invoke-PolicyEvaluation -TargetServer 'DESKTOP-1TD8NB7'
+
+
+L’administrateur de BD devrait exécuter dans T-SQL de SSMS, les requêtes SQL suivantes:
+a) Pour déterminer qui est membre d’un rôle serveur fixe, exécutez la requête suivante :
+SELECT SP1.name AS ServerRoleName,
+ISNULL(SP2.name, 'No members') AS LoginName
+FROM sys.server_role_members AS SRM
+RIGHT JOIN sys.server_principals AS SP1
+ON SRM.role_principal_id = SP1.principal_id
+LEFT JOIN sys.server_principals AS SP2
+ON SRM.member_principal_id = SP2.principal_id
+WHERE SP1.is_fixed_role = 1 -- Remove for SQL Server 2008
+ORDER BY SP1.name;
+
+
+b) Pour déterminer qui est membre d’un rôle base de données fixe, exécutez la 
+requête suivante dans chaque base de données. 
+SELECT DP1.name AS DatabaseRoleName,
+ ISNULL(DP2.name, 'No members') AS DatabaseUserName 
+FROM sys.database_role_members AS DRM 
+RIGHT JOIN sys.database_principals AS DP1
+ ON DRM.role_principal_id = DP1.principal_id 
+LEFT JOIN sys.database_principals AS DP2
+ ON DRM.member_principal_id = DP2.principal_id 
+WHERE DP1.is_fixed_role = 1 
+ORDER BY DP1.name;
+c) Pour obtenir la liste des autorisations qui ont été accordées ou refusées au niveau du serveur, exécuter cette requête dans le Master. 
+SELECT pr.type_desc,
+ pr.name,
+ ISNULL(pe.state_desc, 'No permission statements') AS state_desc,
+ ISNULL(pe.permission_name, 'No permission statements') AS permission_name 
+FROM sys.server_principals AS pr 
+LEFT JOIN sys.server_permissions AS pe
+ ON pr.principal_id = pe.grantee_principal_id 
+WHERE is_fixed_role = 0 -- Remove for SQL Server 2008 
+ORDER BY pr.name,
+ type_desc;
+
+
+
+SELECT pr.type_desc, pr.name, ISNULL(pe.state_desc, 'No permission statements') AS state_desc, ISNULL(pe.permission_name, 'No permission statements') AS permission_name FROM sys.database_principals AS pr LEFT JOIN sys.database_permissions AS pe ON pr.principal_id = pe.grantee_principal_id WHERE pr.is_fixed_role = 0 ORDER BY pr.name, type_desc;
+e) La requête suivante fournit le nom de l’objet de base de données qui est concerné par l’autorisation. 
+SELECT pr.type_desc,
+ pr.name,
+ pe.state_desc,
+ pe.permission_name,
+ s.name + '.' + oj.name AS OBJECT,
+ major_id 
+FROM sys.database_principals AS pr 
+INNER JOIN sys.database_permissions AS pe
+ ON pr.principal_id = pe.grantee_principal_id 
+INNER JOIN sys.objects AS oj
+ ON oj.object_id = pe.major_id 
+INNER JOIN sys.schemas AS s
+ ON oj.schema_id = s.schema_id 
+WHERE class_desc = 'OBJECT_OR_COLUMN';
+
+
+
+
+-- Authentication Windows.
+CREATE LOGIN [<domainName>\<loginName>] FROM WINDOWS;
+GO
+-- Exemple:
+CREATE LOGIN [DESKTOP-4B17HD7\robert] FROM WINDOWS;
+GO
+
+
+
+a) Créer un Master Key de la base de données
+Par exemple se connecter à la base de données AdventureWorks2016 et taper le code T-SQL suivant :
+CREATE MASTER KEY ENCRYPTION BY
+PASSWORD = '<complex password>';
+b) Puis chiffrer avec le Chiffrement Sysmétrique et l’authentificateur.
+CREATE CERTIFICATE Sales09
+WITH SUBJECT = 'Customer Credit Card Numbers';
+GO
+CREATE SYMMETRIC KEY CreditCards_Key11
+WITH ALGORITHM = AES_256
+ENCRYPTION BY CERTIFICATE Sales09;
+GO
+-- Create a column in which to store the encrypted data.
+ALTER TABLE Sales.CreditCard
+ADD CardNumber_Encrypted varbinary(160);
+GO
+-- Open the symmetric key with which to encrypt the data.
+OPEN SYMMETRIC KEY CreditCards_Key11
+DECRYPTION BY CERTIFICATE Sales09;
+-- Encrypt the value in column CardNumber using the
+-- symmetric key CreditCards_Key11.
+-- Save the result in column CardNumber_Encrypted.
+UPDATE Sales.CreditCard
+SET CardNumber_Encrypted = EncryptByKey(Key_GUID('CreditCards_Key11')
+, CardNumber, 1, HASHBYTES('SHA2_256', CONVERT( varbinary
+, CreditCardID)));
+GO
+-- Verify the encryption.
+-- First, open the symmetric key with which to decrypt the data.
+OPEN SYMMETRIC KEY CreditCards_Key11
+DECRYPTION BY CERTIFICATE Sales09;
+GO
+-- Now list the original card number, the encrypted card number,
+-- and the decrypted ciphertext. If the decryption worked,
+-- the original number will match the decrypted number.
+SELECT CardNumber, CardNumber_Encrypted
+AS 'Encrypted card number', CONVERT(nvarchar,
+DecryptByKey(CardNumber_Encrypted, 1 ,
+HASHBYTES('SHA2_256', CONVERT(varbinary, CreditCardID))))
+AS 'Decrypted card number' FROM Sales.CreditCard;
+GO

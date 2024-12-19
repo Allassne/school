@@ -1,0 +1,28 @@
+.nav
+{
+    overflow: hidden;
+    background-color: rgb(0, 92, 92);
+    position: sticky;
+    top: 0%;
+}
+.nav a
+{
+    float: left;
+    display: block;
+    color: rgb(7, 7, 7);
+    padding: 14px 20px;
+    text-decoration: none;
+}
+.nav a.right
+{
+    float: right;
+}
+.nav a:hover
+{
+    background-color:cyan;
+    color: rgb(1, 90, 94);
+}
+.are
+{
+    background-color: rgb(151, 153, 147);
+}

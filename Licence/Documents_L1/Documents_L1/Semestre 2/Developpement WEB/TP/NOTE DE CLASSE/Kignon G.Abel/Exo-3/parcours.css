@@ -1,0 +1,8 @@
+header{
+    background-color: rgb(128, 128, 128);
+}
+div{
+    font-size: xx-large;
+    display: flex;
+    margin:10px;
+}

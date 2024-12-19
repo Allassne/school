@@ -1,0 +1,10 @@
+1er certificat de l'autorite racine (RootCA)
+extention .pem
+
+2eme certificat de l'autorite intermediaire
+
+3eme certificat de l'autorite du serveur
+
+# download openssl
+	configuration
+ 

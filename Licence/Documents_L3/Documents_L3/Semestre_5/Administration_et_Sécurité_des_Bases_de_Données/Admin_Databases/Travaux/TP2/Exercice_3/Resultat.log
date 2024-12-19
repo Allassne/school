@@ -1,0 +1,6 @@
+Changed database context to 'AdventureWorks2012'.
+FirstName                                          LastName                                           Department                                         EndDate         
+-------------------------------------------------- -------------------------------------------------- -------------------------------------------------- ----------------
+Andy                                               Ruth                                               Production                                                     NULL
+
+(1 rows affected)

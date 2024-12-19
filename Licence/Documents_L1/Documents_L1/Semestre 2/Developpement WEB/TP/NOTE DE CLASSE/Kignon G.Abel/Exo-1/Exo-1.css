@@ -1,0 +1,38 @@
+td,tr{
+    border:1px solid black;
+   width: 100px;
+}
+.tableau{
+    margin-left:50px;
+    background-color: rgb(25, 136, 211);
+    
+    
+}
+table{
+    border:1px solid black;
+}
+
+.table3{
+    
+    background-color: rgb(128,128,128);
+}
+.td-englobant{
+    background-color: green;
+}
+.table4{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background-color: red;
+    border-radius:10px 10px 10px 10px;
+}
+.table1{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background-color: blue;
+    border-radius:10px 10px 10px 10px;
+  
+}

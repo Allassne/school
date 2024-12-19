@@ -1,0 +1,66 @@
+table
+{
+	border-collapse: collapse;
+}
+th,td
+{
+	border: 1px solid ;
+}
+.id0
+{
+	border: solid;
+	border-color: red;
+	margin: 20px;
+	width: 1000px;
+	height: 600px;
+}
+.id1
+{
+	border: solid;
+	border-color: blue;
+	margin: 40px;
+	width: 950px;
+	height: 400px;
+}
+.id2
+{
+	border: solid;
+	border-color: green;
+	margin: 50px;
+	width: 750px;
+	height: 300px;
+}
+.id3
+{
+	width: 30px;
+	height: 30px;
+}
+.id4
+{
+	position: relative;
+	left: 80px;
+	bottom: 100px;
+}
+.id5
+	{
+		position: relative;
+		top: 30px;
+		width: 400px;
+	}
+	.id6
+	{
+		width: 20px;
+	}
+	.id7
+	{
+		text-decoration: underline;
+	}
+	.id8
+	{
+		text-decoration: underline;
+
+	}
+	.id9
+	{
+		text-align: center;
+	}

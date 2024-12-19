@@ -1,0 +1,81 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.bouger {
+    clear: both;
+    overflow: hidden;
+
+}
+header{
+    overflow: hidden;
+    height: 100vh;
+}
+
+
+.zone-nav{
+    background: rgb(0, 0, 0, 0.7);
+    height: 60px;
+    position: absolute;
+    width: 100%;
+}
+
+
+.zone-menu{
+    float: right;
+    list-style: none;
+    margin: 20px;
+}
+
+.zone-menu li{
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.zone-menu li a{
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    letter-spacing: 2px;
+}
+
+.zone-menu li.active a{
+    color: darkorange;
+}
+
+.zone-menu li a:hover{
+    color: darkorange;
+}
+
+.text-affiche{
+    position: absolute;
+    margin-top: 30px;
+    top: 35%;
+    text-align: center;
+    left: 25%;
+}
+
+.text-affiche h2 {
+    
+    color: blue;
+    font-size: 50px;
+    margin:0;
+}
+
+.text-affiche h2 span{
+    color: rgb(85, 68, 99);
+}
+.tableau{
+    position: relative;
+    margin-left: -100px;
+}
+.gtable{
+    margin-left: 80px;
+    margin-top: 50px;
+    padding-left: 50px;
+    padding-top: 50px;
+    padding-bottom:50px;
+    padding-right:50px;
+}

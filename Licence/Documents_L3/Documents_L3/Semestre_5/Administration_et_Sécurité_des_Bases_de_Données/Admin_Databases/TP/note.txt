@@ -1,0 +1,93 @@
+			Exo_2
+a)
+SELECT SP1.name AS ServerRoleName,
+ISNULL(SP2.name, 'No members') AS LoginName
+FROM sys.server_role_members AS SRM
+RIGHT JOIN sys.server_principals AS SP1
+ON SRM.role_principal_id = SP1.principal_id
+LEFT JOIN sys.server_principals AS SP2
+ON SRM.member_principal_id = SP2.principal_id
+WHERE SP1.is_fixed_role = 1 -- Remove for SQL Server 2008
+ORDER BY SP1.name;
+
+sysadmin : NT SERVICE\SQLWriter
+
+b)
+SELECT pr.type_desc,
+ pr.name,
+ pe.state_desc,
+ pe.permission_name,
+ s.name + '.' + oj.name AS OBJECT,
+ major_id 
+FROM sys.database_principals AS pr 
+INNER JOIN sys.database_permissions AS pe
+ ON pr.principal_id = pe.grantee_principal_id 
+INNER JOIN sys.objects AS oj
+ ON oj.object_id = pe.major_id 
+INNER JOIN sys.schemas AS s
+ ON oj.schema_id = s.schema_id 
+WHERE class_desc = 'OBJECT_OR_COLUMN';
+
+	SELECT	dbo.spt_values	
+	SELECT	dbo.spt_monitor	
+
+
+-- Authentication Windows.
+CREATE LOGIN [DESKTOP-4B17HD7\robert] FROM WINDOWS;
+GO
+-- Authentication SQL Server.
+CREATE LOGIN robert2 WITH PASSWORD = 'Robert123'
+MUST_CHANGE, CHECK_EXPIRATION = ON;
+GO
+-- 
+CREATE LOGIN Allassane 
+	WITH PASSWORD = '123456'
+CREATE USER AlF FOR LOGIN Allassane;
+
+
+
+CREATE MASTER KEY ENCRYPTION BY
+PASSWORD = '123';
+CREATE CERTIFICATE Sales09
+WITH SUBJECT = 'Certificat de protection de carte de credit';
+GO
+
+CREATE SYMMETRIC KEY Key11
+WITH ALGORITHM = AES_256
+ENCRYPTION BY CERTIFICATE Sales09;
+GO
+
+ALTER TABLE payment
+ADD cartecredit_encrypted varbinary(200);
+GO
+
+UPDATE payment
+SET cartecredit_encrypted = EncryptByKey(Key_GUID('Key11')
+, cartecredit, 1, HASHBYTES('SHA2_256', CONVERT( varbinary
+, payment_Id)));
+GO
+
+
+INSERT INTO payment VALUES (1,10, 152, '45095788805107324',NULL)
+                           (2,12, 300, '95095788805107320',NULL);
+
+select * from payment	
+
+
+
+IF EXISTS (SELECT * FROM sys.triggers where type='TR' and name='tr_InsertEmployees')
+DROP TRIGGER tr_Roxane;
+
+CREATE TRIGGER tr_Roxane
+ON  payment 
+FOR INSERT
+AS 
+BEGIN
+Declare @Id Int
+  SELECT @Id = payment_Id from inserted
+UPDATE payment
+SET cartecredit_encrypted = EncryptByKey(Key_GUID('Key11')
+, cartecredit, payment_Id, HASHBYTES('SHA2_256', CONVERT( varbinary
+, payment_Id)));
+
+END

@@ -1,0 +1,158 @@
+CREATE TABLE Employees ( 
+Id INT PRIMARY KEY,
+FLName VARCHAR(100),
+Salary INT,
+Gender VARCHAR(12),
+DepartmentId INT);
+
+
+INSERT INTO Employees VALUES (1,'Steffan', 82000, 'Male', 3),
+			     (2,'Amelie', 52000, 'Female', 2),
+			     (3,'Antonio', 25000, 'male', 1),
+			     (4,'Marco', 47000, 'Male', 2),
+			     (5,'Eliana', 46000, 'Female', 3);
+
+SELECT *
+FROM Employees;
+
+CREATE TABLE Employees_Audit (
+Id INT IDENTITY ,
+Audit_Action text);
+
+
+USE TravailDirige;
+
+IF EXISTS (SELECT * FROM sys.triggers where type='TR' and name='tr_InsertEmployees')
+DROP TRIGGER tr_InsertEmployees;
+
+CREATE TRIGGER tr_InsertEmployees
+ON  Employees 
+FOR INSERT
+AS 
+BEGIN
+Declare @Id Int
+  SELECT @Id = Id from inserted
+  INSERT INTO Employees_Audit
+  VALUES ('New employee with Id = ' + CAST(@Id AS VARCHAR(10)) + ' is added at ' + CAST(Getdate() AS VARCHAR(22)))
+
+END
+
+
+
+
+
+
+
+
+INSERT INTO Employees VALUES (6,'Robert', 97000, 'Male', 1),
+
+INSERT INTO Employees VALUES (8,'Anne', 55000, 'Female', 2)
+
+
+************************************************************************************************************
+USE TravailDirige
+
+
+IF EXISTS (SELECT * FROM sys.triggers where type='TR' and name='tr_DeleteEmployees')
+DROP TRIGGER tr_DeleteEmployees;
+
+CREATE TRIGGER tr_DeleteEmployees
+ON  Employees 
+AFTER DELETE
+AS 
+BEGIN
+Declare @Id Int
+  SELECT @Id = Id from deleted
+  INSERT INTO Employees_Audit
+  VALUES ('New employee with Id = ' + CAST(@Id AS VARCHAR(10)) + ' is deled at ' + CAST(Getdate() AS VARCHAR(22)))
+
+END
+
+select * from Employees
+select * from Employees_Audit
+select * from sys.triggers
+
+GO
+
+DELETE from  Employees where Id = 7;
+
+
+
+IF OBJECT_ID ('HumanResources.uspGetEmployees', 'P') IS NOT NULL
+DROP PROCEDURE HumanResources.uspGetEmployees;
+GO
+
+CREATE PROCEDURE HumanResources.uspGetEmployees
+@LastName NVARCHAR(50),
+@FirstName NVARCHAR(50)
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT FirstName, LastName, JobTitle, Department
+FROM HumanResources.vEmployeeDepartment
+WHERE FirstName = @FirstName AND LastName = @LastName;
+END
+GO
+Pour exécuter cette procédure paramétrée :
+EXECUTE HumanResources.uspGetEmployees N'Ackerman', N'Pilar';
+-- Or
+EXEC HumanResources.uspGetEmployees @LastName = N'Ackerman', @FirstName = N'Pilar';
+
+
+
+
+IF OBJECT_ID ( 'HumanResources.uspGetEmployees2', 'P' ) IS NOT NULL
+ DROP PROCEDURE HumanResources.uspGetEmployees2;
+ GO
+ CREATE PROCEDURE HumanResources.uspGetEmployees2
+ @LastName NVARCHAR(50) = N'D%',
+ @FirstName NVARCHAR(50) = N'%'
+ AS
+ SET NOCOUNT ON;
+ SELECT FirstName, LastName, JobTitle, Department 
+ FROM HumanResources.vEmployeeDepartment
+ WHERE FirstName LIKE @FirstName AND LastName LIKE @LastName;
+
+EXECUTE HumanResources.uspGetEmployees2 N'H%', N'S%';
+EXECUTE HumanResources.uspGetEmployees2 N'Hesse', N'Stefen';
+
+
+
+
+/* Output Parameters*/
+IF OBJECT_ID ( 'Production.uspGetList', 'P' ) IS NOT NULL
+DROP PROCEDURE Production.uspGetList;
+GO
+CREATE PROCEDURE Production.uspGetList @Product VARCHAR(40)
+, @MaxPrice MONEY
+, @ComparePrice MONEY OUTPUT
+, @ListPrice MONEY OUT
+AS
+SET NOCOUNT ON;
+SELECT p.[Name] AS Product, p.ListPrice AS 'List Price'
+FROM Production.Product AS p
+JOIN Production.ProductSubcategory AS s
+ON p.ProductSubcategoryID = s.ProductSubcategoryID
+WHERE s.[Name] LIKE @Product AND p.ListPrice < @MaxPrice;
+-- Populate the output variable @ListPprice.
+SET @ListPrice = (SELECT MAX(p.ListPrice)
+FROM Production.Product AS p
+JOIN Production.ProductSubcategory AS s
+ON p.ProductSubcategoryID = s.ProductSubcategoryID
+WHERE s.[Name] LIKE @Product AND p.ListPrice < @MaxPrice);
+-- Populate the output variable @compareprice.
+SET @ComparePrice = @MaxPrice;
+GO
+
+DECLARE @ComparePrice MONEY, @Cost MONEY;
+ EXECUTE Production.uspGetList '%Bikes%', 700,
+ @ComparePrice OUT,
+ @Cost OUTPUT 
+IF @Cost <= @ComparePrice
+ BEGIN
+	PRINT 'These products can be purchased for less than
+	$'+RTRIM(CAST(@ComparePrice AS VARCHAR(20)))+'.'
+ END
+ ELSE 
+	PRINT 'The prices for all products in this category exceed
+	$'+ RTRIM(CAST(@ComparePrice AS VARCHAR(20)))+'.';

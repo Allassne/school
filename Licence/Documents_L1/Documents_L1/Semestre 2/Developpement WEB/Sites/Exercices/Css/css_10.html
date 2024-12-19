@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Typographie</title>
+        <style type="text/css">
+                html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+body {
+    line-height: 1.5;
+    margin:10px;
+    font-family: helvetica arial sans-serif;
+    font-size: 1em;
+}
+
+
+h1{
+	font-size: 1.5em;
+	font-family: helvetica arial serif;
+    color:#454545; 
+	font-weight: bold;
+	margin-bottom: 1.5em;
+    
+}
+h1+p{
+	
+	color: #7a7a7a;
+	margin-bottom: 1.5em;
+	margin-left: 20px;
+}
+blockquote{
+	font-size: 1.2em;
+	font-style: italic;
+	margin: 0 80px 20px 60px;
+	background-color: #e7f2fa;
+	border-left: 5px solid #8870FF;
+	color: #444; 
+	padding: 15px;
+
+}
+blockquote em{
+	display: block;
+	text-align: right;
+}
+a{  margin-left: 20px;
+	color: #8870FF;
+}
+/* Note
+line-height : est calculé à partir de la plus haute police d'une ligne de texte ou de la hauteur de l'objet le plus haut.
+
+Il est recommandé d’utiliser une valeur sans unité pour l’élément parent , 
+comme ça le navigateur va affecter à chaque élément une valeur qui dépend de sa taille.
+
+exemple :
+
+ul {font-size: 15px; line-height: 1;}
+li {font-size: 10px;}
+
+ce code affecte à li un line-height = 10px*line-height du parent = 10*1 =10px.
+
+par contre pour le code 
+
+ul {font-size: 15px; line-height: 15px;}
+li {font-size: 10px;}
+
+il affecte à li un line-height =15px (à eviter)*/
+
+        </style>
+    </head>
+    <body>
+        <h1>Web Mobile</h1>
+	<p>D'après wikipedia :Le Web Mobile ou Webmobile est une technique qui permet d'accéder 
+        à Internet depuis un téléphone mobile, on parle alors de l'Internet Mobile et des smartphones.
+         Le web mobile se matérialise notamment par l'utilisation de navigateur mobiles ou d'applications
+          pour Smartphones mais aussi par des widgets, la consultation de mails de façon instantanée... 
+          C'est l'évolution des équipements, des usages et des forfaits de téléphone mobile qui ont permis le démarrage du web mobile.</p>
+    <blockquote>
+     	<p>L'initiative du Web mobile est importante : l'information doit être traité de façon transparente sur n'importe quel appareil</p>
+     	<em>&mdash;Tim Berners-Lee</em>
+     </blockquote>
+
+	<a href="https://fr.wikipedia.org/wiki/Web_mobile">Plus de détails</a>
+
+
+    </body>
+</html>
+
+<!--
+   Objectif :
+améliorer la typographie de texte en utilisant des propriétés css comme :font, line-height , color , margin et padding ... 
+
+Travail à faire : 
+À partir de la page html suivante :
+
+ On va arriver au rendu ci-dessous en utilisant les propriétés css pour la typographie.
+
+Typo-text
+
+ Étapes à suivre:
+
+Faite un css reset : vous pouvez utiliser le reset le plus populaire de Eric Meyer disponible  sur le lien Css reset .
+Css reset c'est une remise à 0 des quelques propriétés css , pour éviter les différences d'affichage sur les divers navigateurs dues aux valeurs par défaut de chaque navigateur.
+
+Le body doit être
+dans l'ordre de préférence de police helvetica, Arial,  et sans-serif
+d'une hauteur de ligne de 1.5 sans unité
+d'une marge de 10px
+d'une taille police de 1em.
+Le titre h1 avec :
+une police helvetica Arial serif
+une taille police de 1.5em
+une marge du bas à 1.5em
+la couleur "#454545"
+et un épaisseur de caractères gras.
+Pour le paragraphe qui suit le titre :
+une couleur #7a7a7a.
+une marge gauche de 20 px.
+une marge du bas de 1.5em.
+Le blockquote doit avoir :
+une police italic de taille 1.2em
+une marge droite de 80px du bas de 20px et de gauche de 60px
+un background #e7f2fa et une couleur #444
+une bordure gauche solide de 5px et de couleur #8870FF
+une marge interne de 15px 
+La balise em avec :
+un affichage en bloc
+un alignement à droite 
+le lien "plus de détails" :
+Une couleur #8870FF
+une marge gauche de 20px
+
+-->

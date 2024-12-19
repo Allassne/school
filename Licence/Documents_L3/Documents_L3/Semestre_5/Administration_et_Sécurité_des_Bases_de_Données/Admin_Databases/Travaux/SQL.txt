@@ -1,0 +1,77 @@
+CREATE TABLE Employees ( 
+Id INT PRIMARY KEY,
+FLName VARCHAR(100),
+Salary INT,
+Gender VARCHAR(12),
+DepartmentId INT);
+
+
+INSERT INTO Employees VALUES (1,'Steffan', 82000, 'Male', 3),
+			     (2,'Amelie', 52000, 'Female', 2),
+			     (3,'Antonio', 25000, 'male', 1),
+			     (4,'Marco', 47000, 'Male', 2),
+			     (5,'Eliana', 46000, 'Female', 3);
+
+SELECT *
+FROM Employees;
+
+CREATE TABLE Employees_Audit (
+Id INT IDENTITY ,
+Audit_Action text);
+
+
+USE TravailDirige;
+
+IF EXISTS (SELECT * FROM sys.triggers where type='TR' and name='tr_InsertEmployees')
+DROP TRIGGER tr_InsertEmployees;
+
+CREATE TRIGGER tr_InsertEmployees
+ON  Employees 
+FOR INSERT
+AS 
+BEGIN
+Declare @Id Int
+  SELECT @Id = Id from inserted
+  INSERT INTO Employees_Audit
+  VALUES ('New employee with Id = ' + CAST(@Id AS VARCHAR(10)) + ' is added at ' + CAST(Getdate() AS VARCHAR(22)))
+
+END
+
+
+
+
+
+
+
+
+INSERT INTO Employees VALUES (6,'Robert', 97000, 'Male', 1),
+
+INSERT INTO Employees VALUES (8,'Anne', 55000, 'Female', 2)
+
+
+************************************************************************************************************
+USE TravailDirige
+
+
+IF EXISTS (SELECT * FROM sys.triggers where type='TR' and name='tr_DeleteEmployees')
+DROP TRIGGER tr_DeleteEmployees;
+
+CREATE TRIGGER tr_DeleteEmployees
+ON  Employees 
+AFTER DELETE
+AS 
+BEGIN
+Declare @Id Int
+  SELECT @Id = Id from deleted
+  INSERT INTO Employees_Audit
+  VALUES ('New employee with Id = ' + CAST(@Id AS VARCHAR(10)) + ' is deled at ' + CAST(Getdate() AS VARCHAR(22)))
+
+END
+
+select * from Employees
+select * from Employees_Audit
+select * from sys.triggers
+
+GO
+
+DELETE from  Employees where Id = 7;

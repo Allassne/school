@@ -1,0 +1,25 @@
+h2{
+    font-size: 25px;
+}
+h1
+{
+    font-size: 20px;
+}
+h3
+{
+    font-size: 25px;
+}
+.coi
+{
+    background-color: aqua;
+    border-color: orangered;
+}
+.acre
+{
+    background-color: orangered;
+    border-color: aqua;
+}
+table
+{
+    border-color: blue;
+}

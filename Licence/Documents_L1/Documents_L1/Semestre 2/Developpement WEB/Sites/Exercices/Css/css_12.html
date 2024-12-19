@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Les selecteurs complexes</title>
+        <style type="text/css">
+            .article p{
+	padding-left: 20px;
+	font-size: 14px;
+}
+h2+p{
+	background-color: yellow;
+
+}
+h2~p{
+	border:1px solid black;
+
+}
+li>p{
+	color: green;
+
+}
+
+        </style>
+    </head>
+    <body>
+        <div class="article">
+            <h2>Titre1</h2>
+            <ul> 
+                  <li>Item1:<p>resumé item1..........</p></li>
+                  <li>Item2:<p>resumé item2.......</p></li>
+                  <li>Item3:<p>resumé item3........</p></li>
+           </ul>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+  
+           <h2>Titre2</h2>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+           <div class="exemple">
+               <h2>exemple1</h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                 
+           </div>
+           
+       </div>
+  
+    </body>
+</html>
+
+<!--
+   Objectif
+Dans cet exercice on va utiliser les combinateurs de descendance, d'adjacence et filial en CSS.
+
+Questions
+En se basant sur le code html suivant:
+
+Utiliser les combinateurs et appliquer les styles CSS ci dessous :
+
+Un retrait gauche de 20px pour tous les paragraphes descendants de la classe "article".
+Un background de couleur jaune pour  les paragraphes frères directs du titre "h2" (qui se trouvent immédiatement après h2) .
+Une bordure noir et solide pour les paragraphes adjacents du titre "h2".
+Une couleur verte pour les paragraphes fils des éléments "li".
+
+-->

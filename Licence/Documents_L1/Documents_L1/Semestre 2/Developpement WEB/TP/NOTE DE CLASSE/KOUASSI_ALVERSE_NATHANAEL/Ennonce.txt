@@ -1,0 +1,3 @@
+EXERCICE1
+
+Creer un tableau comtenant 2 autres tableaux 

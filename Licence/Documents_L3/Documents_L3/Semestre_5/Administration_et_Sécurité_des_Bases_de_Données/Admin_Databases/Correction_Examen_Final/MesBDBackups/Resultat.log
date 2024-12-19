@@ -1,0 +1,10 @@
+Processed 480 pages for database 'EXAMENFINAL', file 'EXAMENFINAL_data' on file 1.
+Processed 2 pages for database 'EXAMENFINAL', file 'Tp1_log' on file 1.
+BACKUP DATABASE successfully processed 482 pages in 0.447 seconds (8.415 MB/sec).
+Pro_Nom                                                                                                                  VenteTotal           
+------------------------------------------------------------------------------------------------------------------------ ---------------------
+Infinix 10 Play                                                                                                                   2500000.0000
+IPhone 13                                                                                                                         1360000.0000
+Samsung 12S                                                                                                                         50000.0000
+
+(3 rows affected)

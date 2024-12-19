@@ -1,0 +1,56 @@
++++++++++++++	CONFIG DNS  +++++++++++++++++++++
+
+Nous allons mettre en place notre domaine " upb.lan "
+  -Changer le nom de la machine en " serveur " avec la cmd:  hostname serveur
+  -Puis redemarer
+
+On  se place dans le fichier /etc/bind
+   -on verifie avec la commande ls qu'existe le fichier db.local
+
+On copie db.local en upb.lan,  sachant que upb.lan sera notre fichier de zone
+ - on utilise la cmd :  sudo cp /etc/bind/db.local /etc/bind/upb.lan
+
+On ouvre upb.lan avec la cmd: sudo nano /etc/bind/upb.lan
+  -Dans ce fichier on remplace tout ce qui est "localhost" par " serveur.upb.lan. " n'oublie pas de mettre le point a la fin
+  -On met le numero de serie dans la norme serial :  aaaammjjxx
+    aaaa c'est l'annee EX: 2023
+    mm  c'est le moi EX: 02
+    jj       c'est le jour EX: 21
+    xx  le nombre de foix qu'on venait de modifier ce fichier EX: 01  pour dire c'est la premiere foix
+  -a la fin du fichier on ajoute la ligne suivante:  
+	seveur.upb.lan.       NS      A         @Ip_du_serveur
+
+Maintenant, on declare notre zone dans le fichier /etc/bind/named.conf.default-zone
+   -la cmd sudo nano pour ouvrir le fichier
+   -la declaration se fait comme suite:
+	zone "upb.lan"{
+		type mster;
+		file /etc/bind/upb.lan;
+	};
+
+Nous allons faire la resolution du nom de domaine dans /etc/resolv.conf en y ajoutant la ligne suivante:
+	nameserver  @Ip_du_serveur
+
+On redemare le serviec dns:
+	systemctl restart bind9.service
+
+( Maintenant notre notre domaine upb.lan devrait etre pret, disponible et joignable !)
+
+------------------ Verification------------------------------------
+
+On tape les cmd suivantes:
+	named-checkconf    ( si tout va bien, cette cmd vous renvoie a la ligne)
+	naned-checkzone upb.lan /etc/bind/upb.lan   (elle vous renvoie le numero de serie)
+
+	dig upb.lan              ( vous devez voir NOERROR au niveau du status)
+	dig upb.lan ns        ( elle vous renvoie le nom du serveur)
+	dig upb.lan a          (elle vous renvoie l'@Ip du serveur )
+	dig upb.lan soa      (elle vous renvoie les elements de temps )
+
+Si tout va bien, restez sur le serveur et faites ceci :
+	ping serveur.upb.lan  (ca devrait passer !)
+	ping upb.lan                 (ca devrait passer egalement ! )
+    ( faites la meme chose sur une machine cliente, ca devrait aboutir egalement ! )
+
+------------------------------MERCI !!!!------------------------------------------------------------------
+  
