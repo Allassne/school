@@ -1,0 +1,26 @@
+May 17 12:44:41.535 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+May 17 12:44:41.536 HYPERVISOR: Started on IP = localhost, TCP port = 50573.
+May 17 12:44:42.170 HYPERVISOR: exec_cmd: hypervisor version 
+May 17 12:44:42.171 HYPERVISOR: exec_cmd: hypervisor working_dir U:\Doc-interne\Gns3\Tp1\TP1\project-files\dynamips 
+May 17 12:44:42.171 GENERAL: working_dir=U:\Doc-interne\Gns3\Tp1\TP1\project-files\dynamips
+May 17 12:44:42.172 HYPERVISOR: exec_cmd: hypervisor working_dir U:\Doc-interne\Gns3\Tp1\TP1\project-files\dynamips\53bd4670-f22e-41a3-8e62-c0dc7f600f33 
+May 17 12:44:42.172 GENERAL: working_dir=U:\Doc-interne\Gns3\Tp1\TP1\project-files\dynamips\53bd4670-f22e-41a3-8e62-c0dc7f600f33
+May 17 12:44:42.174 HYPERVISOR: exec_cmd: vm create UPB-Cocody 2 c3745 
+May 17 12:44:42.186 VM: VM UPB-Cocody created.
+May 17 12:44:42.187 HYPERVISOR: exec_cmd: vm set_con_tcp_port UPB-Cocody 5001 
+May 17 12:44:42.187 HYPERVISOR: exec_cmd: c3745 get_mac_addr UPB-Cocody 
+May 17 12:44:42.188 HYPERVISOR: exec_cmd: vm set_disk0 UPB-Cocody 0 
+May 17 12:44:42.189 HYPERVISOR: exec_cmd: vm set_exec_area UPB-Cocody 64 
+May 17 12:44:42.190 HYPERVISOR: exec_cmd: vm get_status UPB-Cocody 
+May 17 12:44:42.190 HYPERVISOR: exec_cmd: vm set_idle_pc UPB-Cocody 0x6023f5d0 
+May 17 12:44:42.192 HYPERVISOR: exec_cmd: vm set_ios UPB-Cocody C:/Users/noura/GNS3/images/IOS/c3745-advipservicesk9-mz.124-25d.image 
+May 17 12:44:42.193 HYPERVISOR: exec_cmd: c3745 set_mac_addr UPB-Cocody c402.4360.0000 
+May 17 12:44:42.194 HYPERVISOR: exec_cmd: vm set_nvram UPB-Cocody 256 
+May 17 12:44:42.194 HYPERVISOR: exec_cmd: vm set_ram UPB-Cocody 256 
+May 17 12:44:56.907 HYPERVISOR: exec_cmd: vm get_status UPB-Cocody 
+May 17 12:44:56.910 HYPERVISOR: exec_cmd: vm extract_config UPB-Cocody 
+May 17 12:44:56.913 HYPERVISOR: exec_cmd: vm delete UPB-Cocody 
+May 17 12:44:56.913 VM: VM UPB-Cocody destroyed.
+May 17 12:44:56.916 HYPERVISOR: exec_cmd: hypervisor stop 
+May 17 12:44:57.007 HYPERVISOR: Stopped.
+May 17 12:44:57.007 GENERAL: reset done.

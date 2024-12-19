@@ -1,0 +1,40 @@
+
+
+
+### PE2
+
+conf t
+ip vrf UPB
+rd 10:1
+route-target both 1:10
+
+int f0/0
+ip vrf forwarding UPB
+ip add 172.16.12.2 255.255.255.0
+
+do show ip vrf
+do wr
+
+
+ping vrf UPB @ip
+
+
+
+### PE5
+
+conf t
+ip vrf UPB
+rd 10:1
+route-target both 1:10
+
+int f0/0
+ip vrf forwarding UPB
+ip add 172.16.56.5 255.255.255.0
+
+do show ip vrf
+do wr
+
+
+ping vrf UPB @ip
+
+

@@ -1,0 +1,55 @@
+### SiegeHoly
+
+conf t
+router rip
+version 2
+no auto-summary
+network 82.82.82.0
+network 10.9.5.0
+do show ip protocols
+
+do wr
+
+
+
+### SiegeSonac
+
+conf t
+router rip
+version 2
+no auto-summary
+network 88.88.88.0
+network 10.9.6.0
+do show ip protocols
+
+do wr
+
+
+
+### AgenceHoly
+
+conf t
+router rip
+version 2
+no auto-summary
+network 87.87.87.0
+network 10.9.7.0
+do show ip protocols
+
+do wr
+
+
+
+### AgenceSonac
+
+conf t
+router rip
+version 2
+no auto-summary
+network 89.89.89.0
+network 10.9.1.0
+do show ip protocols
+
+do wr
+
+

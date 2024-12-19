@@ -1,0 +1,26 @@
+May 17 12:44:42.329 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+May 17 12:44:42.332 HYPERVISOR: Started on IP = localhost, TCP port = 50576.
+May 17 12:44:42.883 HYPERVISOR: exec_cmd: hypervisor version 
+May 17 12:44:42.884 HYPERVISOR: exec_cmd: hypervisor working_dir U:\Doc-interne\Gns3\Tp1\TP1\project-files\dynamips 
+May 17 12:44:42.884 GENERAL: working_dir=U:\Doc-interne\Gns3\Tp1\TP1\project-files\dynamips
+May 17 12:44:42.885 HYPERVISOR: exec_cmd: hypervisor working_dir U:\Doc-interne\Gns3\Tp1\TP1\project-files\dynamips\57572e52-e43f-4b84-a897-d0e41359fc68 
+May 17 12:44:42.885 GENERAL: working_dir=U:\Doc-interne\Gns3\Tp1\TP1\project-files\dynamips\57572e52-e43f-4b84-a897-d0e41359fc68
+May 17 12:44:42.885 HYPERVISOR: exec_cmd: vm create P4 3 c3745 
+May 17 12:44:42.887 VM: VM P4 created.
+May 17 12:44:42.889 HYPERVISOR: exec_cmd: vm set_con_tcp_port P4 5002 
+May 17 12:44:42.889 HYPERVISOR: exec_cmd: c3745 get_mac_addr P4 
+May 17 12:44:42.890 HYPERVISOR: exec_cmd: vm set_disk0 P4 0 
+May 17 12:44:42.891 HYPERVISOR: exec_cmd: vm set_exec_area P4 64 
+May 17 12:44:42.891 HYPERVISOR: exec_cmd: vm get_status P4 
+May 17 12:44:42.892 HYPERVISOR: exec_cmd: vm set_idle_pc P4 0x6023f5d0 
+May 17 12:44:42.894 HYPERVISOR: exec_cmd: vm set_ios P4 C:/Users/noura/GNS3/images/IOS/c3745-advipservicesk9-mz.124-25d.image 
+May 17 12:44:42.895 HYPERVISOR: exec_cmd: c3745 set_mac_addr P4 c403.1e8c.0000 
+May 17 12:44:42.895 HYPERVISOR: exec_cmd: vm set_nvram P4 256 
+May 17 12:44:42.896 HYPERVISOR: exec_cmd: vm set_ram P4 256 
+May 17 12:44:56.909 HYPERVISOR: exec_cmd: vm get_status P4 
+May 17 12:44:56.912 HYPERVISOR: exec_cmd: vm extract_config P4 
+May 17 12:44:56.924 HYPERVISOR: exec_cmd: vm delete P4 
+May 17 12:44:56.924 VM: VM P4 destroyed.
+May 17 12:44:56.926 HYPERVISOR: exec_cmd: hypervisor stop 
+May 17 12:44:57.193 HYPERVISOR: Stopped.
+May 17 12:44:57.194 GENERAL: reset done.

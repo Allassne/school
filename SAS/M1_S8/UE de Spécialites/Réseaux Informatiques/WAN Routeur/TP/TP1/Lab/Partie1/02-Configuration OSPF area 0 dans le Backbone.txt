@@ -1,0 +1,69 @@
+
+### PE2
+
+conf t
+router ospf 1
+network 172.16.23.0 0.0.0.255 area 0
+network 172.16.25.0 0.0.0.255 area 0
+network 22.22.22.0 0.0.0.255 area 0
+
+int loopback 0
+ip ospf network point-to-point
+
+do show ip protocol
+
+do wr
+
+
+
+### P3
+
+conf t
+router ospf 1
+network 172.16.34.0 0.0.0.255 area 0
+network 172.16.23.0 0.0.0.255 area 0
+network 33.33.33.0 0.0.0.255 area 0
+
+int loopback 0
+ip ospf network point-to-point
+
+do show ip protocol
+
+do wr
+
+
+
+### P4
+
+conf t
+router ospf 1
+network 172.16.34.0 0.0.0.255 area 0
+network 172.16.45.0 0.0.0.255 area 0
+network 44.44.44.0 0.0.0.255 area 0
+
+int loopback 0
+ip ospf network point-to-point
+
+do show ip protocol
+
+do wr
+
+
+
+### PE5
+
+conf t
+router ospf 1
+network 172.16.45.0 0.0.0.255 area 0
+network 172.16.25.0 0.0.0.255 area 0
+network 55.55.55.0 0.0.0.255 area 0
+
+int loopback 0
+ip ospf network point-to-point
+
+do show ip protocol
+
+do wr
+
+
+

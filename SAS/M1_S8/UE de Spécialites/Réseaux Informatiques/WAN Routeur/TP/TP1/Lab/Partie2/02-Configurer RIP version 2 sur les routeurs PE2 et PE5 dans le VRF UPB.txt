@@ -1,0 +1,25 @@
+### PE2
+
+conf t
+router rip
+version 2
+no auto-summary
+address-family ipv4 vrf UPB
+network 172.16.12.0
+do show ip route vrf UPB
+
+do wr
+
+   
+
+### PE5
+
+conf t
+router rip
+version 2
+no auto-summary
+address-family ipv4 vrf UPB
+network 172.16.56.0
+do show ip route vrf UPB
+
+do wr

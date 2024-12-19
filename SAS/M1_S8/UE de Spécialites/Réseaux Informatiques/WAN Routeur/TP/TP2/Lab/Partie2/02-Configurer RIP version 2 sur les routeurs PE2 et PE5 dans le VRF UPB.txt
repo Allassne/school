@@ -1,0 +1,41 @@
+### PE1
+
+conf t
+router rip
+version 2
+no auto-summary
+address-family ipv4 vrf HOLY 
+network 10.9.5.0
+do show ip route vrf HOLY
+
+exit
+router rip
+version 2
+no auto-summary
+address-family ipv4 vrf SONAC 
+network 10.9.6.0
+do show ip route vrf SONAC
+
+do wr
+
+   
+
+### PE2
+
+conf t
+router rip
+version 2
+no auto-summary
+address-family ipv4 vrf HOLY 
+network 10.9.7.0
+do show ip route vrf HOLY
+
+exit
+router rip
+version 2
+no auto-summary
+address-family ipv4 vrf SONAC 
+network 10.9.1.0
+do show ip route vrf SONAC
+
+do wr

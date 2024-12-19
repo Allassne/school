@@ -1,0 +1,48 @@
+### PE1
+
+conf t
+router bgp 1
+address-family ipv4 vrf HOLY
+redistribute rip
+
+router rip
+address-family ipv4 vrf HOLY
+redistribute bgp 1 metr trans
+
+exit
+router bgp 1
+address-family ipv4 vrf SONAC
+redistribute rip
+
+router rip
+address-family ipv4 vrf SONAC
+redistribute bgp 1 metr trans
+
+do wr
+
+   
+
+### PE2
+
+conf t
+router bgp 1
+address-family ipv4 vrf HOLY
+redistribute rip
+
+router rip
+address-family ipv4 vrf HOLY
+redistribute bgp 1 metr trans
+
+exit
+router bgp 1
+address-family ipv4 vrf SONAC
+redistribute rip
+
+router rip
+address-family ipv4 vrf SONAC
+redistribute bgp 1 metr trans
+
+do wr
+
+do show ip route
+do show ip bgp all

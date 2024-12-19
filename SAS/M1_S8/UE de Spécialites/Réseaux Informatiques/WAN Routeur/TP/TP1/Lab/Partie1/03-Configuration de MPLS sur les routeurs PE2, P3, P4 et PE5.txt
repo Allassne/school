@@ -1,0 +1,58 @@
+### PE2
+
+conf t
+int f1/0
+mpls ip
+
+int f0/1
+mpls ip
+
+do show mpls ldp neighbor
+
+do wr
+
+
+
+### P3
+
+conf t
+int f0/0
+mpls ip
+
+int f0/1
+mpls ip
+
+
+do show mpls ldp neighbor
+
+do wr
+
+
+
+### P4
+
+conf t
+int f0/0
+mpls ip
+
+int f0/1
+mpls ip
+
+do show mpls ldp neighbor
+
+do wr
+
+
+
+### PE5
+
+conf t
+int f1/0
+mpls ip
+
+int f0/1
+mpls ip
+
+do show mpls ldp neighbor
+
+do wr

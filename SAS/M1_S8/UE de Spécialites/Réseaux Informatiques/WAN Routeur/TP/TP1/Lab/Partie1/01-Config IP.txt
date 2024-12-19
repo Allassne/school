@@ -1,0 +1,165 @@
+# IP
+
+### UPB_Cocody
+
+conf t
+int f0/0
+ip add 172.16.12.1 255.255.255.0
+no shutdown
+
+do show interfaces fastEthernet 0/0
+do show interfaces loopback 0
+
+do wr
+
+
+
+### PE2
+
+conf t
+int f0/0
+ip add 172.16.12.2 255.255.255.0
+no shutdown
+
+int f1/0
+ip add 172.16.25.2 255.255.255.0
+no shutdown
+
+int f0/1
+ip add 172.16.23.2 255.255.255.0
+no shutdown
+
+int lo0
+ip add 22.22.22.22 255.255.255.0
+no shutdown
+
+do show interfaces loopback 0
+
+do show interfaces fastEthernet 0/0
+do show interfaces fastEthernet 1/0
+do show interfaces fastEthernet 0/1
+do show interfaces loopback 0
+
+do wr
+
+
+
+### P3
+
+conf t
+int f0/0
+ip add 172.16.34.3 255.255.255.0
+no shutdown
+
+int f0/1
+ip add 172.16.23.3 255.255.255.0
+no shutdown
+
+int lo0
+ip add 33.33.33.33 255.255.255.0
+no shutdown
+
+do show interfaces fastEthernet 0/0
+do show interfaces fastEthernet 0/1
+do show interfaces loopback 0
+
+do wr
+
+
+
+### P4
+
+conf t
+int f0/0
+ip add 172.16.34.4 255.255.255.0
+no shutdown
+
+int f0/1
+ip add 172.16.45.4 255.255.255.0
+no shutdown
+
+int lo0
+ip add 44.44.44.44 255.255.255.0
+no shutdown
+
+do show interfaces fastEthernet 0/0
+do show interfaces fastEthernet 1/0
+do show interfaces fastEthernet 0/1
+do show interfaces loopback 0
+
+do wr
+
+
+
+### PE5
+
+conf t
+int f0/0
+ip add 172.16.56.5 255.255.255.0
+no shutdown
+
+int f1/0
+ip add 172.16.25.5 255.255.255.0
+no shutdown
+
+int f0/1
+ip add 172.16.45.5 255.255.255.0
+no shutdown
+
+int lo0
+ip add 55.55.55.55 255.255.255.0
+no shutdown
+
+do show interfaces fastEthernet 0/0
+do show interfaces fastEthernet 1/0
+do show interfaces fastEthernet 0/1
+do show interfaces loopback 0
+
+do wr
+
+
+
+### UPB_MAN
+
+conf t
+int f0/0
+ip add 172.16.56.5 255.255.255.0
+no shutdown
+
+int lo0
+ip add 66.66.66.66 255.255.255.0
+no shutdown
+
+do show interfaces fastEthernet 0/0
+do show interfaces loopback 0
+
+do wr
+
+
+----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+oscp

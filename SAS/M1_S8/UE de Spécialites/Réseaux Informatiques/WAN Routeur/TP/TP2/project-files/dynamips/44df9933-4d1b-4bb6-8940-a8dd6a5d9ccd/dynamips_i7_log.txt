@@ -1,0 +1,37 @@
+May 20 17:42:43.558 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+May 20 17:42:43.560 HYPERVISOR: Started on IP = localhost, TCP port = 62212.
+May 20 17:42:43.980 HYPERVISOR: exec_cmd: hypervisor version 
+May 20 17:42:43.980 HYPERVISOR: exec_cmd: hypervisor working_dir U:\Doc-interne\Gns3\TP2\project-files\dynamips 
+May 20 17:42:43.980 GENERAL: working_dir=U:\Doc-interne\Gns3\TP2\project-files\dynamips
+May 20 17:42:43.981 HYPERVISOR: exec_cmd: hypervisor working_dir U:\Doc-interne\Gns3\TP2\project-files\dynamips\fb0e400c-9ba3-4e24-ad5c-55e69b2cdd26 
+May 20 17:42:43.981 GENERAL: working_dir=U:\Doc-interne\Gns3\TP2\project-files\dynamips\fb0e400c-9ba3-4e24-ad5c-55e69b2cdd26
+May 20 17:42:43.981 HYPERVISOR: exec_cmd: vm create R8 8 c7200 
+May 20 17:42:43.983 VM: VM R8 created.
+May 20 17:42:43.984 HYPERVISOR: exec_cmd: vm set_con_tcp_port R8 5007 
+May 20 17:42:43.985 HYPERVISOR: exec_cmd: c7200 get_mac_addr R8 
+May 20 17:42:43.985 HYPERVISOR: exec_cmd: vm get_status R8 
+May 20 17:42:43.985 HYPERVISOR: exec_cmd: vm slot_add_binding R8 0 0 C7200-IO-FE 
+May 20 17:42:43.986 HYPERVISOR: exec_cmd: vm set_disk0 R8 0 
+May 20 17:42:43.987 HYPERVISOR: exec_cmd: vm set_exec_area R8 64 
+May 20 17:42:43.987 HYPERVISOR: exec_cmd: vm get_status R8 
+May 20 17:42:43.988 HYPERVISOR: exec_cmd: vm set_idle_pc R8 0x60608434 
+May 20 17:42:43.989 HYPERVISOR: exec_cmd: vm set_ios R8 C:/Users/noura/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M.image 
+May 20 17:42:43.990 HYPERVISOR: exec_cmd: c7200 set_mac_addr R8 ca08.21cc.0000 
+May 20 17:42:43.990 HYPERVISOR: exec_cmd: vm set_nvram R8 512 
+May 20 17:42:43.991 HYPERVISOR: exec_cmd: vm set_ram R8 512 
+May 20 17:42:43.992 HYPERVISOR: exec_cmd: vm get_status R8 
+May 20 17:42:43.992 HYPERVISOR: exec_cmd: vm slot_remove_binding R8 0 0 
+May 20 17:42:43.993 HYPERVISOR: exec_cmd: vm get_status R8 
+May 20 17:42:43.993 HYPERVISOR: exec_cmd: vm slot_add_binding R8 0 0 C7200-IO-GE-E 
+May 20 17:42:47.388 HYPERVISOR: exec_cmd: nio create_udp udp-bf7c460c-696c-46dd-a208-9c20fb344072 10040 127.0.0.1 10041 
+May 20 17:42:47.736 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R8 0 0 udp-bf7c460c-696c-46dd-a208-9c20fb344072 
+May 20 17:42:47.738 HYPERVISOR: exec_cmd: vm get_status R8 
+May 20 18:51:49.378 HYPERVISOR: exec_cmd: vm get_status R8 
+May 20 18:51:49.383 HYPERVISOR: exec_cmd: vm extract_config R8 
+May 20 18:51:49.640 HYPERVISOR: exec_cmd: vm get_status R8 
+May 20 18:51:49.641 HYPERVISOR: exec_cmd: vm extract_config R8 
+May 20 18:51:49.643 HYPERVISOR: exec_cmd: vm delete R8 
+May 20 18:51:49.643 VM: VM R8 destroyed.
+May 20 18:51:49.645 HYPERVISOR: exec_cmd: hypervisor stop 
+May 20 18:51:50.112 HYPERVISOR: Stopped.
+May 20 18:51:50.113 GENERAL: reset done.

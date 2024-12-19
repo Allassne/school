@@ -1,0 +1,60 @@
+### PE1
+
+conf t
+ip vrf HOLY
+rd 12:12
+route-target both 12:12
+
+int g2/0
+ip vrf forwarding HOLY
+ip add 10.9.5.1 255.255.255.0
+
+do show ip vrf
+
+exit
+
+ip vrf SONAC
+rd 20:20
+route-target both 20:20
+
+int g3/0
+ip vrf forwarding SONAC
+ip add 10.9.6.1 255.255.255.0
+
+do show ip vrf
+do wr
+
+
+
+### PE2
+
+conf t
+ip vrf HOLY
+rd 12:12
+route-target both 12:12
+
+int g2/0
+ip vrf forwarding HOLY
+ip add 10.9.7.1 255.255.255.0
+
+do show ip vrf
+do wr
+
+exit
+
+ip vrf SONAC
+rd 20:20
+route-target both 20:20
+
+int g3/0
+ip vrf forwarding SONAC
+ip add 10.9.1.1 255.255.255.0
+
+do show ip vrf
+do wr
+
+
+ping vrf HOLY @ip
+
+ping vrf SONAC @ip
+

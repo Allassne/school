@@ -1,0 +1,26 @@
+May 17 12:44:43.010 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+May 17 12:44:43.012 HYPERVISOR: Started on IP = localhost, TCP port = 50579.
+May 17 12:44:43.472 HYPERVISOR: exec_cmd: hypervisor version 
+May 17 12:44:43.472 HYPERVISOR: exec_cmd: hypervisor working_dir U:\Doc-interne\Gns3\Tp1\TP1\project-files\dynamips 
+May 17 12:44:43.473 GENERAL: working_dir=U:\Doc-interne\Gns3\Tp1\TP1\project-files\dynamips
+May 17 12:44:43.474 HYPERVISOR: exec_cmd: hypervisor working_dir U:\Doc-interne\Gns3\Tp1\TP1\project-files\dynamips\11a0e072-a055-41aa-bcf7-f1d31b4e6a06 
+May 17 12:44:43.474 GENERAL: working_dir=U:\Doc-interne\Gns3\Tp1\TP1\project-files\dynamips\11a0e072-a055-41aa-bcf7-f1d31b4e6a06
+May 17 12:44:43.474 HYPERVISOR: exec_cmd: vm create UPB-MAN 4 c3745 
+May 17 12:44:43.477 VM: VM UPB-MAN created.
+May 17 12:44:43.478 HYPERVISOR: exec_cmd: vm set_con_tcp_port UPB-MAN 5003 
+May 17 12:44:43.478 HYPERVISOR: exec_cmd: c3745 get_mac_addr UPB-MAN 
+May 17 12:44:43.479 HYPERVISOR: exec_cmd: vm set_disk0 UPB-MAN 0 
+May 17 12:44:43.480 HYPERVISOR: exec_cmd: vm set_exec_area UPB-MAN 64 
+May 17 12:44:43.480 HYPERVISOR: exec_cmd: vm get_status UPB-MAN 
+May 17 12:44:43.481 HYPERVISOR: exec_cmd: vm set_idle_pc UPB-MAN 0x6023f5d0 
+May 17 12:44:43.483 HYPERVISOR: exec_cmd: vm set_ios UPB-MAN C:/Users/noura/GNS3/images/IOS/c3745-advipservicesk9-mz.124-25d.image 
+May 17 12:44:43.483 HYPERVISOR: exec_cmd: c3745 set_mac_addr UPB-MAN c404.1d58.0000 
+May 17 12:44:43.484 HYPERVISOR: exec_cmd: vm set_nvram UPB-MAN 256 
+May 17 12:44:43.485 HYPERVISOR: exec_cmd: vm set_ram UPB-MAN 256 
+May 17 12:44:56.908 HYPERVISOR: exec_cmd: vm get_status UPB-MAN 
+May 17 12:44:56.911 HYPERVISOR: exec_cmd: vm extract_config UPB-MAN 
+May 17 12:44:56.914 HYPERVISOR: exec_cmd: vm delete UPB-MAN 
+May 17 12:44:56.914 VM: VM UPB-MAN destroyed.
+May 17 12:44:56.919 HYPERVISOR: exec_cmd: hypervisor stop 
+May 17 12:44:57.286 HYPERVISOR: Stopped.
+May 17 12:44:57.286 GENERAL: reset done.

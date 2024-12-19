@@ -1,0 +1,28 @@
+May 17 12:44:40.570 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+May 17 12:44:40.572 HYPERVISOR: Started on IP = localhost, TCP port = 50559.
+May 17 12:44:40.700 HYPERVISOR: exec_cmd: hypervisor version 
+May 17 12:44:40.700 HYPERVISOR: exec_cmd: hypervisor working_dir U:\Doc-interne\Gns3\Tp1\TP1\project-files\dynamips 
+May 17 12:44:40.702 GENERAL: working_dir=U:\Doc-interne\Gns3\Tp1\TP1\project-files\dynamips
+May 17 12:44:40.702 HYPERVISOR: exec_cmd: hypervisor working_dir U:\Doc-interne\Gns3\Tp1\TP1\project-files\dynamips\d19df962-679b-4804-b664-ac86d1e06f69 
+May 17 12:44:40.703 GENERAL: working_dir=U:\Doc-interne\Gns3\Tp1\TP1\project-files\dynamips\d19df962-679b-4804-b664-ac86d1e06f69
+May 17 12:44:40.703 HYPERVISOR: exec_cmd: vm create PE2 7 c3745 
+May 17 12:44:40.706 VM: VM PE2 created.
+May 17 12:44:40.707 HYPERVISOR: exec_cmd: vm set_con_tcp_port PE2 5006 
+May 17 12:44:40.707 HYPERVISOR: exec_cmd: c3745 get_mac_addr PE2 
+May 17 12:44:40.708 HYPERVISOR: exec_cmd: vm set_disk0 PE2 0 
+May 17 12:44:40.709 HYPERVISOR: exec_cmd: vm set_exec_area PE2 64 
+May 17 12:44:40.710 HYPERVISOR: exec_cmd: vm get_status PE2 
+May 17 12:44:40.710 HYPERVISOR: exec_cmd: vm set_idle_pc PE2 0x6023f5d0 
+May 17 12:44:40.712 HYPERVISOR: exec_cmd: vm set_ios PE2 C:/Users/noura/GNS3/images/IOS/c3745-advipservicesk9-mz.124-25d.image 
+May 17 12:44:40.713 HYPERVISOR: exec_cmd: c3745 set_mac_addr PE2 c407.3454.0000 
+May 17 12:44:40.714 HYPERVISOR: exec_cmd: vm set_nvram PE2 256 
+May 17 12:44:40.715 HYPERVISOR: exec_cmd: vm set_ram PE2 256 
+May 17 12:44:40.716 HYPERVISOR: exec_cmd: vm get_status PE2 
+May 17 12:44:40.716 HYPERVISOR: exec_cmd: vm slot_add_binding PE2 1 0 NM-1FE-TX 
+May 17 12:44:56.908 HYPERVISOR: exec_cmd: vm get_status PE2 
+May 17 12:44:56.911 HYPERVISOR: exec_cmd: vm extract_config PE2 
+May 17 12:44:56.914 HYPERVISOR: exec_cmd: vm delete PE2 
+May 17 12:44:56.914 VM: VM PE2 destroyed.
+May 17 12:44:56.918 HYPERVISOR: exec_cmd: hypervisor stop 
+May 17 12:44:57.106 HYPERVISOR: Stopped.
+May 17 12:44:57.107 GENERAL: reset done.

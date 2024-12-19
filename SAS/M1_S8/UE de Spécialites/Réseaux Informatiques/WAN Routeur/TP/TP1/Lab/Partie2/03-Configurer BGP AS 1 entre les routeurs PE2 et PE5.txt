@@ -1,0 +1,31 @@
+### PE2
+
+conf t
+router bgp 1
+neighbor 55.55.55.55 remote 1
+neighbor 55.55.55.55 update-source lo0
+
+address-family vpnv4
+neighbor 55.55.55.55 activate
+neighbor 55.55.55.55 send-community both
+
+do show ip bgp neighbor
+
+do wr
+
+   
+
+### PE5
+
+conf t
+router bgp 1
+neighbor 22.22.22.22 remote 1
+neighbor 22.22.22.22 update-source lo0
+
+address-family vpnv4
+neighbor 22.22.22.22 activate
+neighbor 22.22.22.22 send-community both
+
+do show ip bgp neighbor
+
+do wr

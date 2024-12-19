@@ -1,0 +1,179 @@
+# IP
+
+### SiegeHoly
+
+conf t
+int g0/0
+ip add 10.9.5.2 255.255.255.0
+no shutdown
+
+int lo0
+ip add 82.82.82.82 255.255.255.0
+no shutdown
+
+do show interfaces g0/0
+do show interfaces loopback 0
+
+do wr
+
+### SiegeSonac
+
+conf t
+int g0/0
+ip add 10.9.6.2 255.255.255.0
+no shutdown
+
+int lo0
+ip add 88.88.88.88 255.255.255.0
+no shutdown
+
+do show interfaces g0/0
+do show interfaces loopback 0
+
+do wr
+
+### PE1
+
+conf t
+int g0/0
+ip add 10.9.1.1 255.255.255.0
+no shutdown
+
+int g1/0
+ip add 10.9.4.1 255.255.255.0
+no shutdown
+
+int g2/0
+ip add 10.9.5.1 255.255.255.0
+no shutdown
+
+int g3/0
+ip add 10.9.6.1 255.255.255.0
+no shutdown
+
+int lo0
+ip add 83.83.83.83 255.255.255.0
+no shutdown
+
+do show interfaces loopback 0
+
+do show interfaces g0/0
+do show interfaces g1/0
+do show interfaces g2/0
+do show interfaces g3/0
+do show interfaces loopback 0
+
+do wr
+
+
+
+### PE2
+
+conf t
+int g0/0
+ip add 10.9.3.1 255.255.255.0
+no shutdown
+
+int g1/0
+ip add 10.9.2.1 255.255.255.0
+no shutdown
+
+int g2/0
+ip add 10.9.7.1 255.255.255.0
+no shutdown
+
+int g3/0
+ip add 10.9.1.1 255.255.255.0
+no shutdown
+
+int lo0
+ip add 86.86.86.86 255.255.255.0
+no shutdown
+
+do show interfaces g0/0
+do show interfaces g1/0
+do show interfaces g2/0
+do show interfaces g3/0
+do show interfaces loopback 0
+
+do wr
+
+
+
+### P
+
+conf t
+int g0/0
+ip add 10.9.1.2 255.255.255.0
+no shutdown
+
+int g1/0
+ip add 10.9.2.2 255.255.255.0
+no shutdown
+
+int lo0
+ip add 84.84.84.84 255.255.255.0
+no shutdown
+
+do show interfaces g0/0
+do show interfaces g1/0
+do show interfaces loopback 0
+
+do wr
+
+
+
+### P1
+
+conf t
+int g0/0
+ip add 10.9.3.2 255.255.255.0
+no shutdown
+
+int g1/0
+ip add 10.9.4.2 255.255.255.0
+no shutdown
+
+int lo0
+ip add 85.85.85.85 255.255.255.0
+no shutdown
+
+do show interfaces g0/0
+do show interfaces g1/0
+do show interfaces loopback 0
+
+do wr
+
+
+
+### AgenceHoly
+
+conf t
+int g0/0
+ip add 10.9.7.2 255.255.255.0
+no shutdown
+
+int lo0
+ip add 87.87.87.87 255.255.255.0
+no shutdown
+
+do show interfaces g0/0
+do show interfaces loopback 0
+
+do wr
+
+### AgenceSonac
+
+conf t
+int g0/0
+ip add 10.9.1.2 255.255.255.0
+no shutdown
+
+int lo0
+ip add 89.89.89.89 255.255.255.0
+no shutdown
+
+do show interfaces g0/0
+do show interfaces loopback 0
+
+do wr

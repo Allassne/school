@@ -1,0 +1,25 @@
+### UPB_Cocody
+
+conf t
+router rip
+version 2
+no auto-summary
+network 11.11.11.0
+network 172.16.12.0
+do show ip protocols
+
+do wr
+
+   
+
+### UPB_MAN
+
+conf t
+router rip
+version 2
+no auto-summary
+network 66.66.66.0
+network 172.16.56.0
+do show ip protocols
+
+do wr

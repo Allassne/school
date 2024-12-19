@@ -1,0 +1,31 @@
+### PE2
+
+conf t
+router bgp 1
+address-family ipv4 vrf UPB
+redistribute rip
+
+router rip
+address-family ipv4 vrf UPB
+redistribute bgp 1 metr trans
+
+do show ip route
+do wr
+
+   
+
+### PE5
+
+conf t
+router bgp 1
+address-family ipv4 vrf UPB
+redistribute rip
+
+router rip
+address-family ipv4 vrf UPB
+redistribute bgp 1 metr trans
+
+do wr
+
+
+do show ip bgp all
